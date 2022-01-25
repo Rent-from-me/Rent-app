@@ -1,9 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './component/Home/Home';
+import Header from './component/layout/Header';
+import RentList from './component/Rent/RentList';
+import Auth from './component/User/Auth';
+
 
 function App() {
   return (
     <div className="App">
-     <h1>Rent from me</h1>
+      <Header>
+        <Header />
+      </Header>
+      <section>
+        <Routes>
+          <Route path="/RentList" element={<RentList />} />
+          <Route path="/Auth" element={<Auth />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </section>
     </div>
   );
 }
