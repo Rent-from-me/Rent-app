@@ -1,1 +1,15 @@
 /* Header css */
+
+a {
+  text-decoration: none !important;
+}
+a:focus {
+  color: white !important;
+}
+.active {
+  background-color: blue;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.287);
+}

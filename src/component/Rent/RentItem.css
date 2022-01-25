@@ -1,0 +1,16 @@
+.rent__item {
+  overflow: hidden;
+  width: 100%;
+}
+.rent__item-detial {
+  margin: 0 10px;
+}
+.rent__item-detial-2 p {
+  position: relative;
+  top: -10px;
+  font-size: 14px;
+}
+.rent__item-img {
+  width: 100%;
+  border-radius: 5px;
+}

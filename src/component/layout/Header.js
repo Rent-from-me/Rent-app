@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./Header.css"
 
 // you can must deleted  this feel free (just for starting purpose just retrun code) 
@@ -7,16 +7,22 @@ import "./Header.css"
 const Header = () => {
   return (
     <div>
-      <ul class="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded">
-        <li class="nav-item">
-          <Link to="/">Home</Link>
+      <ul className="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded">
+        <li className="nav-item">
+          <NavLink activeClassName="active" to="/">
+            Home
+          </NavLink>
         </li>
-        <li class="nav-item"></li>
-        <li class="nav-item">
-          <Link to="/RentList">RentList</Link>
+        <li className="nav-item"></li>
+        <li className="nav-item">
+          <NavLink activeClassName="active" to="/RentList">
+            RentList
+          </NavLink>
         </li>
-        <li class="nav-item">
-          <Link to="/Auth">Profile</Link>
+        <li className="nav-item">
+          <NavLink activeClassName="active" to="/Auth">
+            Profile
+          </NavLink>
         </li>
       </ul>
     </div>
