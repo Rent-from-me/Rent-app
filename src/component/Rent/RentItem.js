@@ -1,22 +1,37 @@
-import React from 'react';
-import img from "../../asset/camer1.jpg";
-import "./RentItem.css"
-import {FavoriteBorderOutlined} from "@mui/material";
+import React from "react";
+import "./RentItem.css";
+import Heart from "@material-ui/icons/FavoriteTwoTone";
 
-const RentItem = () => {
+const RentItem = (props) => {
+  const { img, title, price, review, date, id } = props.i;
+
   return (
     <div className="rent__item ">
-      <span>{FavoriteBorderOutlined}</span>
-      <img src={img} className="rent__item-img" alt="IMG" />
+      <img
+        src={require(`../../asset/camer${id}.jpg`)}
+        className="rent__item-img"
+        alt="IMG"
+      />
+  
+      <div className="rent__item-profile p-3">
+        <div class="avatar ">
+          <img
+            class="avatar__image"
+            src={require(`../../asset/camer${id}.jpg`)}
+          />
+        </div>
+        <h5 className="text-capitalize thrid-heading ms-2">{title} </h5>
+        <Heart className="fs-1 icon-heart" color="white" />
+      </div>
       <div className="pt-1 rent__item-detial d-flex justify-content-between">
-        <h5 className="text-capitalize ">item name </h5>
-        <h5>price</h5>
+        <h5 className="text-capitalize thrid-heading">{title} </h5>
+        <h5 className="thrid-heading">${price}</h5>
       </div>
       <div className="pt-1 rent__item-detial rent__item-detial-2 d-flex justify-content-between">
         <p className="text-capitalize ">
-          ⭐ <span> 4.5 review</span>
+          ⭐ <span>{review}</span>
         </p>
-        <p>Date</p>
+        <p className="text-capitalize">{date}</p>
       </div>
     </div>
   );

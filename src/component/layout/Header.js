@@ -7,7 +7,7 @@ import "./Header.css"
 const Header = () => {
   return (
     <div>
-      <ul className="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded">
+      <ul className="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded thrid-heading">
         <li className="nav-item">
           <NavLink activeClassName="active" to="/">
             Home

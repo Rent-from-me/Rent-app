@@ -1,5 +1,20 @@
+html {
+    font-size: 62.5%;
+}
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.thrid-heading {
+    font-size: 1.4rem;
+}
+
+
+@media only screen and (max-width: 606px) {
+  html{
+    font-size: 100%;
+  }
 }
