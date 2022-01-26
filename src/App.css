@@ -8,10 +8,18 @@ body{
     box-sizing: border-box;
 }
 
+.primary-heading {
+  font-size: 3rem;
+}
+
 .thrid-heading {
     font-size: 1.4rem;
 }
 
+/* //React router  */
+a {
+  color: black !important;
+}
 
 @media only screen and (max-width: 606px) {
   html{
