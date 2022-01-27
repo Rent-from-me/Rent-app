@@ -1,28 +1,18 @@
 import React from "react";
 import "./RentItem.css";
-import Heart from "@material-ui/icons/FavoriteTwoTone";
-
+import ProfileRenter from "../ProfileRenter/ProfileRenter"
 const RentItem = (props) => {
   const { img, title, price, review, date, id } = props.i;
 
   return (
     <div className="rent__item ">
       <img
-        src={require(`../../asset/camer${id}.jpg`)}
+        src={require(`../../../asset/camer${id}.jpg`)}
         className="rent__item-img"
         alt="IMG"
       />
-
-      <div className="rent__item-profile p-3">
-        <div class="avatar ">
-          <img
-            class="avatar__image"
-            src={require(`../../asset/camer${id}.jpg`)}
-          />
-        </div>
-        <h5 className="text-capitalize thrid-heading ms-2">{title} </h5>
-        <Heart className="fs-1 icon-heart" color="white" />
-      </div>
+       {/* rentItemprofile */}
+       <ProfileRenter data ={props.i}/>
       <div className="pt-2 rent__item-detial d-flex justify-content-between">
         <h5 className="text-capitalize thrid-heading pt-4">{title} </h5>
         <h5 className="thrid-heading pt-4">

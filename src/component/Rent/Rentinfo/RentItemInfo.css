@@ -1,0 +1,41 @@
+.item__info {
+  width: 95%;
+  margin: 0 auto 50px auto;
+}
+
+.item__info-img {
+  box-shadow: .5rem .5rem .8rem #ffffff, -.5rem -.5rem 2rem hsl(0, 100%, 100%);
+  overflow: hidden;
+}
+
+.item__info-img--main {
+  width: 50%;
+  height: 30rem;
+  border-radius: 1rem;
+}
+.item-info-img--subs {
+  width: 49%;
+  margin-right: 2rem;
+  height: 30rem;
+}
+.item-info-img--sub {
+  width: 48%;
+  height: 14.5rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+}
+.item__info_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid rgba(128, 128, 128, 0.322);
+}
+.item__info_img:hover {
+    opacity: .99;
+}
+.item__info-detail {
+    width: 32rem;
+}
+.item_info-loction{
+    margin-left: auto;
+}

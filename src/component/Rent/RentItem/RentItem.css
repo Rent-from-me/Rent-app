@@ -39,29 +39,17 @@
   box-shadow: 1px 1px 2px #d6d6d6, -1px -1px 2px #ffffff44;
 }
 
-
-.icon-heart{
-  transition: all .4s;
+.icon-heart {
   margin-left: auto;
+  transition: all 0.5s;
 }
 
-.icon-heart:hover{
-  transform: scale(1.05);
-  
+
+.icon-heart .icon {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.avatar {
-  border-radius: 50%;
-  height: 3.8rem;
-  width: 3.8rem;
-}
-
-.avatar__image {
-  border-radius: 50%;
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
 
 @media only screen and (max-width: 606px) {
   .rent__item {
