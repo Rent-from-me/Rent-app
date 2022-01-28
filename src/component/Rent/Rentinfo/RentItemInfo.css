@@ -9,17 +9,13 @@
 }
 
 .item__info-img--main {
-  width: 50%;
   height: 30rem;
   border-radius: 1rem;
 }
 .item-info-img--subs {
-  width: 49%;
-  margin-right: 2rem;
   height: 30rem;
 }
 .item-info-img--sub {
-  width: 48%;
   height: 14.5rem;
   margin-bottom: 1rem;
   border-radius: .5rem;
@@ -39,3 +35,4 @@
 .item_info-loction{
     margin-left: auto;
 }
+
