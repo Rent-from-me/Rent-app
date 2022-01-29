@@ -1,6 +1,6 @@
 import React from "react";
 import "./RentItem.css";
-import ProfileRenter from "../ProfileRenter/ProfileRenter"
+
 const RentItem = (props) => {
   const { img, title, price, review, date, id } = props.i;
 
@@ -11,8 +11,6 @@ const RentItem = (props) => {
         className="rent__item-img"
         alt="IMG"
       />
-       {/* rentItemprofile */}
-       <ProfileRenter data ={props.i}/>
       <div className="pt-2 rent__item-detial d-flex justify-content-between">
         <h5 className="text-capitalize thrid-heading pt-4">{title} </h5>
         <h5 className="thrid-heading pt-4">
