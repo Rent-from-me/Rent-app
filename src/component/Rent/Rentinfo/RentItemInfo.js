@@ -27,7 +27,7 @@ const RentItemInfo = (props) => {
           <h4 className="item_info-loction">Location of Host</h4>
         </div>
       </section>
-      <Box sx={12} className=" mt-5 mx-auto d-flex" gap={1}>
+      <Box sx={12} className=" mt-5 mx-auto d-flex" gap={.7}>
         <Grid xs={6.6} className="item__info-img--main grid">
           <img
             src={require(`../../../asset/camer${id}.jpg`)}
@@ -36,15 +36,15 @@ const RentItemInfo = (props) => {
           />
         </Grid>
         <Grid xs={6} className="item-info-img--subs grid d-flex flex-wrap">
-          <Grid xs={12} className="d-flex" gap={1}>
-            <Grid xs={6} className="item-info-img--sub grid2">
+          <Grid xs={12} className="d-flex" gap={.4}>
+            <Grid xs={6} className="item-info-img--sub ">
               <img
                 src={require(`../../../asset/camer4.jpg`)}
                 alt="img"
                 className="item__info_img"
               />
             </Grid>
-            <Grid xs={6} className="item-info-img--sub grid2">
+            <Grid xs={6} className="item-info-img--sub">
               <img
                 src={require(`../../../asset/camer5.jpg`)}
                 alt="img"
@@ -52,15 +52,15 @@ const RentItemInfo = (props) => {
               />
             </Grid>
           </Grid>
-          <Grid xs={12} className="d-flex" gap={1}>
-            <Grid xs={6} className="item-info-img--sub grid2">
+          <Grid xs={12} className="d-flex" gap={.8}>
+            <Grid xs={6} className="item-info-img--sub ">
               <img
                 src={require(`../../../asset/camer3.jpg`)}
                 alt="img"
                 className="item__info_img"
               />
             </Grid>
-            <Grid xs={6} className="item-info-img--sub grid2">
+            <Grid xs={6} className="item-info-img--sub">
               <img
                 src={require(`../../../asset/camer2.jpg`)}
                 alt="img"
@@ -71,8 +71,8 @@ const RentItemInfo = (props) => {
         </Grid>
       </Box>
 
-      <section>
-        <RenterInfo data ={selectedItem}/>
+      <section className="my-5">
+        <RenterInfo data={selectedItem} />
       </section>
     </div>
   );
