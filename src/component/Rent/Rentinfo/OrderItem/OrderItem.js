@@ -2,19 +2,22 @@ import React from "react";
 import "./OrderItem.css";
 
 const OrderItem = (props) => {
-  const { review, reviewer } = props.data;
+  const { review, reviewer,price } = props.data;
 
   return (
-    <form className="fs-4 text-capitalize  ">
-      <h4 className="mt-3">
-        ⭐ {review} ･ {reviewer} reviewer
-      </h4>
-      <label htmlFor="" className="check p-3 rounded-start my-3">
+    <form className="fs-4 ">
+      <h5 className="thrid-heading pt-4 mt-3 ">
+        <span className="fs-1">${price}</span>/<span className="fs-4">day</span>
+      </h5>
+      <label
+        htmlFor=""
+        className="check p-3 rounded-start my-3 text-capitalize "
+      >
         <p>check in </p>
         <input type="date" name="date" className="form_input" />
       </label>
 
-      <label htmlFor="" className="check p-3 rounded-end">
+      <label htmlFor="" className="check p-3 rounded-end text-capitalize ">
         <p>check out </p>
         <input type="date" name="date" className="form_input" />
       </label>
@@ -32,7 +35,7 @@ const OrderItem = (props) => {
         Rent
       </button>
 
-      <div className="d-flex justify-content-between mb-3 mt-4 total ">
+      <div className="d-flex justify-content-between mb-3 mt-4 total text-capitalize ">
         <h4>total</h4>
         <h4>$2000</h4>
       </div>
