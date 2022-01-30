@@ -5,23 +5,23 @@ const RentItem = (props) => {
   const { img, title, price, review, date, id } = props.i;
 
   return (
-    <div className="rent__item ">
+    <div className="rent__item me-4 mb-4 rounded">
       <img
         src={require(`../../../asset/camer${id}.jpg`)}
-        className="rent__item-img"
+        className="rent__item-img rounded"
         alt="IMG"
       />
-      <div className="pt-2 rent__item-detial d-flex justify-content-between">
+      <div className="mx-4 d-flex justify-content-between">
         <h5 className="text-capitalize thrid-heading pt-4">{title} </h5>
         <h5 className="thrid-heading pt-4">
           ${price}/<span className="fs-5">day</span>
         </h5>
       </div>
-      <div className="mt-2 rent__item-detial rent__item-detial-2 d-flex justify-content-between">
-        <p className="text-capitalize ">
+      <div className="my-2   mx-4 rent__item-detial-2 d-flex justify-content-between">
+        <p className="text-capitalize fs-5">
           ⭐ <span>{review}</span>
         </p>
-        <p className="text-capitalize">{date}</p>
+        <p className="text-capitalize fs-5">{date}</p>
       </div>
     </div>
   );

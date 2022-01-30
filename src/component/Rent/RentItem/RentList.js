@@ -5,7 +5,7 @@ import "./RentList.css"
 
 const RentList = (props) => {
   return (
-    <div className="rent-list">
+    <div className="rent-list ps-4">
       <h1 className="primary-heading ms-4">Rent List</h1>
       <div className="d-flex justify-content-center flex-wrap mt-5">
         {props.data.map((i) => (

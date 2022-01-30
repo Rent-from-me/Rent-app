@@ -1,0 +1,21 @@
+.form {
+  width: 90%;
+}
+.check {
+  border: 1px solid rgba(128, 128, 128, 0.685);
+}
+
+.form_input {
+   width: 13.8rem;
+   border: none;
+}
+.form_btn {
+  width: 100%;
+  border: none;
+  background-color: orange;
+  color: white;
+}
+
+.total {
+  color: rgba(0, 0, 0, 0.676);
+}

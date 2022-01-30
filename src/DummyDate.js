@@ -14,28 +14,28 @@ export const init = [
         date: "jan-27-22",
         img: "../.././asset/camer1.jpg",
         comment:
-          "Beautiful location and very comfortable stay. The sundowner deck and fire in the evening were great. Really friendly and helpful team.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
       },
       {
         name: "comera one2",
         date: "jan-27-22",
         img: "../.././asset/camer1.jpg",
         comment:
-          "Beautiful location and very comfortable stay. The sundowner deck and fire in the evening were great. Really friendly and helpful team.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
       },
       {
         name: "comera one3",
         date: "jan-27-22",
         img: "../.././asset/camer1.jpg",
         comment:
-          "Beautiful location and very comfortable stay. The sundowner deck and fire in the evening were great. Really friendly and helpful team.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
       },
       {
         name: "comera one4",
         date: "jan-27-22",
         img: "../.././asset/camer1.jpg",
         comment:
-          "Beautiful location and very comfortable stay. The sundowner deck and fire in the evening were great. Really friendly and helpful team.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
       },
     ],
   },
