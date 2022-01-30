@@ -37,7 +37,7 @@ const OrderItem = (props) => {
 
       <div className="d-flex justify-content-between mb-3 mt-4 total text-capitalize ">
         <h4>total</h4>
-        <h4>$2000</h4>
+        <h4>${price}</h4>
       </div>
     </form>
   );
