@@ -1,14 +1,34 @@
 /* Header css */
-a {
-  text-decoration: none !important;
+.header {
+  width: 95%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
 }
+
 a:focus {
   color: white !important;
 }
-.active {
-  background-color: blue;
-  padding: 5px 15px;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.287);
+
+.header__logo {
+  object-fit: contain;
+  height: 8rem;
+}
+
+.header__center{
+  flex: 1;
+  max-width: fit-content;
+  border: 1px solid lightgray;
+  border-radius: 10rem;
+  padding: .8rem 1rem;
+}
+
+.header__center > input {
+  width: 20rem;
+  border: none;
+}
+
+.header__center > input:focus {
+  outline: none;
 }

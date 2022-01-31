@@ -1,35 +1,40 @@
 import React from 'react';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink,Link} from 'react-router-dom';
 import "./Header.css"
-import Avatar from "@mui/material/Avatar";
-// you can must deleted  this feel free (just for starting purpose just retrun code) 
+// import Avatar from "@mui/material/Avatar";
+
+import SearchIcon from "@mui/icons-material/Search";
+import LanguageIcon from "@mui/icons-material/Language";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Avatar } from '@mui/material';
 
 const Header = () => {
+  
   return (
-    <div>
-      <ul className="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded thrid-heading">
-        <li className="nav-item">
-          <NavLink activeClassName="active" to="/">
-            Home
+    <header className="header  d-flex align-items-center justify-content-between fs-4 shadow-sm mb-4">
+      <Link to="/">
+      <img
+        src={require(`../../asset/logo.png`)}
+        alt="logo"
+        className="header__logo"
+      />
+      </Link>
+      <div className="header__center d-flex align-items-center">
+        <input type="text" placeholder="Searching...." />
+        <SearchIcon className="fs-1" />
+      </div>
+
+      <div className="header__right d-flex me-5 align-items-center justify-content-between">
+        <h4 className="fs-4 me-3">
+          <NavLink to="Host/" className="link">
+            Become a host
           </NavLink>
-        </li>
-        <li className="nav-item"></li>
-        <li className="nav-item">
-          <NavLink activeClassName="active" to="/RentList">
-            RentList
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <Link to="/Auth">
-            <Avatar
-              alt="Remy Sharp"
-              src={require(`../../asset/camer5.jpg`)}
-              sx={{ width: 24, height: 24 }}
-            />
-          </Link>
-        </li>
-      </ul>
-    </div>
+        </h4>
+        <LanguageIcon className="fs-1  me-2" />
+        <ExpandMoreIcon className="fs-1 me-2" />
+        <Avatar className="fs-1" />
+      </div>
+    </header>
   );
 };
 

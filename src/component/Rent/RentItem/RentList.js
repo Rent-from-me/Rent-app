@@ -9,7 +9,7 @@ const RentList = (props) => {
       <h1 className="primary-heading ms-4">Rent List</h1>
       <div className="d-flex justify-content-center flex-wrap mt-5">
         {props.data.map((i) => (
-          <Link to={`/RentItemInfo/${i.id}`} key={i.id} >
+          <Link to={`/RentItemInfo/${i.id}`} key={i.id} className="link">
             <RentItem i={i} />
           </Link>
         ))}

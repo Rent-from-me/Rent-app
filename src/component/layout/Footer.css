@@ -1,5 +1,9 @@
 /* Footer css  */
+footer {
+  border-top: 2px solid lightgray ;
+}
 .text-center {
   text-align: center;
   font-weight: bold;
+  
 }

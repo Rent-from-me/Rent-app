@@ -5,7 +5,9 @@ import Footer from './component/layout/Footer';
 import Header from './component/layout/Header';
 import RentItemInfo from './component/Rent/Rentinfo/RentItem/RentItemInfo';
 import RentList from './component/Rent/RentItem/RentList';
-import Auth from './component/User/Auth';
+import HostHome from './component/Users/HostHome/HostHome';
+// import Auth from './component/Users/Host/HostHome';
+
 import {init} from "./DummyDate"
 
 
@@ -24,11 +26,11 @@ function App() {
             path="/RentItemInfo/:id"
             element={<RentItemInfo data={init} />}
           />
-          <Route path="/Auth" element={<Auth />} />
+          <Route path="/Host" element={<HostHome/>} />
           <Route path="/" element={<Home />} />
         </Routes>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
