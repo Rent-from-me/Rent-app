@@ -40,7 +40,7 @@ const ModalOrder = (props) => {
                 />
               </div>
               <h2>
-                are sure to rent this {title} item in {props.days} days and
+                are sure to rent this {title}  in {props.days} days and
                 their amount rent is and that day is ${Total}
               </h2>
             </div>
@@ -48,10 +48,10 @@ const ModalOrder = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={props.Close} className="fs-4">
-            Disagree
+            Cancle
           </Button>
           <Button onClick={props.Close} className="fs-4">
-            Agree
+            Rent
           </Button>
         </DialogActions>
       </Dialog>
