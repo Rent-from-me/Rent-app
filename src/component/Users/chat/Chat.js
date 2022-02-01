@@ -1,10 +1,10 @@
 import React from 'react';
 import HostHeader from '../HostHome/HostHeader';
-
+import "./Chat.css"
 const Chat = () => {
-  return <div>
+  return <div className='chat'>
       <HostHeader/>
-      <h2> i am Chating</h2>
+      <h1 className='my-5'> I am Chating</h1>
   </div>;
 };
 

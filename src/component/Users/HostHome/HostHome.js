@@ -4,13 +4,12 @@ import HostHeader from './HostHeader';
 import "./HostHome.css"
 
 
-const HostHome = (props) => {
-  console.log(props.data);
+const HostHome = ({host}) => {
   return (
     <div className="host-home  ">
       <HostHeader />
       <section>
-        <HostLIst data={props.data} />
+        <HostLIst {...host} />
       </section>
     </div>
   );

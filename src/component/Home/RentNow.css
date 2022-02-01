@@ -1,0 +1,30 @@
+.rentnow {
+  display: flex;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.rentnow > img {
+  width: 45%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rentnow__info {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.btn{
+    background-color: black !important;
+
+}
+.btn:hover{
+    color: white !important;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import HostItem from './HostItem';
 
-const HostLIst = (props) => {
-
+const HostLIst = ({ rentitems }) => {
+  console.log(rentitems);
   return (
     <div>
-      {props.data.map((item, index) => (
+      {rentitems.map((item, index) => (
         <HostItem {...item} key={index} />
       ))}
     </div>

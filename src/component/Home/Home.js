@@ -1,9 +1,11 @@
 import React from 'react';
-
+import Banner from './Banner';
+import RentNow from "./RentNow"
 const Home = () => {
   return (
     <div>
-      <h1 className="primary-heading ms-5">Home</h1>
+      <Banner/>
+      <RentNow/>
     </div>
   );
 };

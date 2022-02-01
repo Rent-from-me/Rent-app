@@ -28,7 +28,7 @@ function App() {
             path="/RentItemInfo/:id"
             element={<RentItemInfo {...init} />}
           />
-          <Route path="/Host" element={<HostHome data={init} />} />
+          <Route path="/Host" element={<HostHome {...init} />} />
           <Route path="/Chat" element={<Chat />} />
           <Route path="/New" element={<NewItem />} add wone />
           <Route path="/" element={<Home />} />

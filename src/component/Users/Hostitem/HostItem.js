@@ -3,16 +3,13 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import StarIcon from "@mui/icons-material/Star";
 import "./HostItem.css"
 
-const HostItem = ({title,price,desc,review}) => {
-
-      
-    // const {item} = props.host
+const HostItem = ({title,img,price,desc,review}) => {
 
     const n = Math.floor(Math.random() * 5 + 1) 
 
   return (
     <div className="host__item">
-      <img src={require(`../../../asset/camer${n}.jpg`)} alt="img" />
+      <img src={img} alt="img" />
       <FavoriteBorderOutlinedIcon className="host__item__heart fs-2" />
 
       <div className="host__item__info">
