@@ -2,16 +2,16 @@ import React from 'react';
 import "./Reviewer.css";
 import Avatar from "@mui/material/Avatar";
 
-const Comment = (props) => {
-  const {name,date,comment} = props.comment
+// dispayed img RenterInfo 
+const Comment = ({name,date,comment,img}) => {
   
   return (
-    <div className="reviewer__box my-2" key={name}>
+    <div className="reviewer__box my-4" key={name}>
       <section className="d-flex align-items-center  mb-3 ">
         <div class="avatar-renter ">
           <Avatar
             alt="Remy Sharp"
-            src={require(`../../../../asset/camer${props.id + 1}.jpg`)}
+            src={img}
             sx={{ width: 56, height: 56 }}
           />
         </div>

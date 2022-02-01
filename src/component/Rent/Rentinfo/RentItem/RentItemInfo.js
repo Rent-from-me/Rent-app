@@ -9,24 +9,27 @@ import RenterInfo from "../Renter/RenterInfo";
 import OrderItem from "../OrderItem/OrderItem";
 
 
-const RentItemInfo = (props) => {
+const RentItemInfo = ({rentItem}) => {
+  console.log(rentItem);
   const params = useParams();
-  const selectedItem = props.data.find(
-    (selected) => selected.id === +params.id
-  );
-  const { id, title, img, reviewer, review } = selectedItem;
-
+  console.log(params);
+  const selectedItem = rentItem.find((selected) => selected.id === +params.id);
+  const { id, title, img, reviewer, review,location} = selectedItem;
+  console.log("seleted",selectedItem);
+  
   return (
     <div className="item__info">
       <section className="item__info--header ">
-        <h1 className="primary-heading  text-capitalize mb-3">
-          {selectedItem.title}
+        <h1 className="primary-heading  text-capitalize my-4 ">
+          {title}
         </h1>
         <div className="item__info-detail d-flex">
           <h4>
             ⭐ {review} ･ {reviewer} reviewer
           </h4>
-          <h4 className="ms-auto">Location of Host</h4>
+          <h4 className="ms-auto">
+            Location {location}
+          </h4>
         </div>
       </section>
       <Box
@@ -35,43 +38,23 @@ const RentItemInfo = (props) => {
         gap={0.7}
       >
         <Grid xs={6.6} className="item__info-img--main grid rounded-start">
-          <img
-            src={require(`../../../../asset/camer${id}.jpg`)}
-            alt="img"
-            className="item__info_img "
-          />
+          <img src={img.main} alt="img" className="item__info_img " />
         </Grid>
         <Grid xs={6} className="item-info-img--subs grid d-flex flex-wrap">
           <Grid xs={12} className="d-flex" gap={0.4}>
             <Grid xs={6} className="item-info-img--sub ">
-              <img
-                src={require(`../../../../asset/camer4.jpg`)}
-                alt="img"
-                className="item__info_img"
-              />
+              <img src={img.sub1} alt="img" className="item__info_img" />
             </Grid>
             <Grid xs={6} className="item-info-img--sub">
-              <img
-                src={require(`../../../../asset/camer5.jpg`)}
-                alt="img"
-                className="item__info_img"
-              />
+              <img src={img.sub2} alt="img" className="item__info_img" />
             </Grid>
           </Grid>
           <Grid xs={12} className="d-flex" gap={0.8}>
             <Grid xs={6} className="item-info-img--sub ">
-              <img
-                src={require(`../../../../asset/camer3.jpg`)}
-                alt="img"
-                className="item__info_img"
-              />
+              <img src={img.sub3} alt="img" className="item__info_img" />
             </Grid>
             <Grid xs={6} className="item-info-img--sub">
-              <img
-                src={require(`../../../../asset/camer2.jpg`)}
-                alt="img"
-                className="item__info_img"
-              />
+              <img src={img.sub4} alt="img" className="item__info_img" />
             </Grid>
           </Grid>
         </Grid>

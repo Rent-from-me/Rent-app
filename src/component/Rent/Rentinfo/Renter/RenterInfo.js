@@ -28,7 +28,7 @@ const RenterInfo = (props) => {
             </h4>
             <div className="reviewer__con d-flex justify-content-between align-items-center flex-wrap my-5">
               {comments.map((comment, index) => (
-                <Comment comment={comment} id={index} />
+                <Comment {...comment} id={index} />
               ))}
             </div>
           </article>

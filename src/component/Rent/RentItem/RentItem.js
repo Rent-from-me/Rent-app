@@ -1,13 +1,12 @@
 import React from "react";
 import "./RentItem.css";
 
-const RentItem = (props) => {
-  const { img, title, price, review, date, id } = props.i;
+const RentItem = ({id,img,title,price,review,date}) => {
 
   return (
     <div className="rent__item me-4 mb-4 rounded">
       <img
-        src={require(`../../../asset/camer${id}.jpg`)}
+        src={img.main}
         className="rent__item-img rounded"
         alt="IMG"
       />
