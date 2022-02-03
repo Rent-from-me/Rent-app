@@ -4,12 +4,13 @@ import HostHeader from './HostHeader';
 import "./HostHome.css"
 
 
-const HostHome = ({host}) => {
+const HostHome = (props) => {
+  
   return (
     <div className="host-home  ">
       <HostHeader />
       <section>
-        <HostLIst {...host} />
+        <HostLIst hostItem={props.hostList} />
       </section>
     </div>
   );

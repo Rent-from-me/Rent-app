@@ -9,11 +9,11 @@ import RenterInfo from "../Renter/RenterInfo";
 import OrderItem from "../OrderItem/OrderItem";
 
 
-const RentItemInfo = ({rentItem}) => {
-  console.log(rentItem);
+const RentItemInfo = (props) => {
+
   const params = useParams();
   console.log(params);
-  const selectedItem = rentItem.find((selected) => selected.id === +params.id);
+  const selectedItem = props.info.find((selected) => selected.id === +params.id);
   const { id, title, img, reviewer, review,location} = selectedItem;
   console.log("seleted",selectedItem);
   
@@ -62,10 +62,10 @@ const RentItemInfo = ({rentItem}) => {
 
       <Box className="d-flex align-items-center">
         <section className="my-5 item__renter-data ">
-          <RenterInfo data={selectedItem} />
+          {/* <RenterInfo data={selectedItem} /> */}
         </section>
         <section className="mx-auto my-5 item_renter-order shadow-lg p-4 ">
-          <OrderItem data={selectedItem} />
+          {/* <OrderItem data={selectedItem} /> */}
         </section>
       </Box>
     </div>
