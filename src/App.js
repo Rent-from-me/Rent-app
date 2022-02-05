@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './component/Home/Home';
@@ -10,43 +11,63 @@ import RentList from './component/Rent/RentItem/RentList';
 import Chat from './component/Users/Host/chat/Chat';
 import HostHome from './component/Users/Host/HostHome/HostHome';
 import NewItem from './component/Users/Host/NewItemHost/NewItem';
+import Login from './component/Users/user/Login';
+import Register from './component/Users/user/Register';
 
 
-
-import {init} from "./DummyDate"
 
 function App() {
-  const [d, setD] = useState(init.rentItem);
-  const [h, setH] = useState(init.host.rentitems);
-  
-  // ADD NEW ITEM 
-  const addRentItem = (addNew) => {
-    const add = [...d, {...addNew}]
-    const addHostitemList = [...h, {...addNew}]
-    setD(add)
-    setH(addHostitemList)
+   const init = useSelector((state) => state);
+   const [allData,setAllData] = useState(init)
+  //save to local storage 
+  const saveToLocalStorage = () => {
+    localStorage.setItem("Data", JSON.stringify(allData));
   }
-  console.log(h);
+  
+  //Get to local storage
+  const getToLocalStorage = () => {
+    if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify([]))
+    else {
+      let localData = JSON.parse(localStorage.getItem("Data"))
+      // {localData && addRentItem ? }
+      if(localData  ) setAllData(localData);
+    }
+  }
+  console.log(allData);
+ 
   return (
     <div className="App">
-      <Header>
-        <Header />
-      </Header>
-      <section>
-        <Routes>
-          <Route path="/New" element={<NewItem add={addRentItem} />} />
-          <Route path="/RentList" element={<RentList rent={d} />} />
-          <Route
-            path="/RentItemInfo/:id"
-            element={<RentItemInfo info = {d} />}
-          />
-          <Route path="/Host" element={<HostHome hostList = {h} />} />
-          <Route path="/Chat" element={<Chat />} />
+      {!Register ? (
+        <Login  />
+      ) : (
+        <>
+          <Header>
+            <Header />
+          </Header>
+          <section>
+            <Routes>
+              <Route
+                path="/New"
+                element={<NewItem/>}
+              />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/RentList" element={<RentList  />} />
+              <Route
+                path="/RentItemInfo/:id"
+                element={<RentItemInfo />}
+              />
+              <Route
+                path="/Host"
+                element={<HostHome  />}
+              />
+              <Route path="/Chat" element={<Chat />} />
 
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </section>
-      <Footer />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </section>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

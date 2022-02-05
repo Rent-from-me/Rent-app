@@ -7,15 +7,19 @@ import Grid from "@mui/material/Grid";
 
 import RenterInfo from "../Renter/RenterInfo";
 import OrderItem from "../OrderItem/OrderItem";
+import { useSelector } from "react-redux";
 
 
 const RentItemInfo = (props) => {
 
   const params = useParams();
   console.log(params);
-  const selectedItem = props.info.find((selected) => selected.id === +params.id);
+  const rentItem = useSelector(state => state.HostItem)
+  console.log("Itemin",rentItem);
+  const selectedItem = rentItem.find((selected) => selected.id === +params.id );
+  
   const { id, title, img, reviewer, review,location} = selectedItem;
-  console.log("seleted",selectedItem);
+
   
   return (
     <div className="item__info">
@@ -62,11 +66,13 @@ const RentItemInfo = (props) => {
 
       <Box className="d-flex align-items-center">
         <section className="my-5 item__renter-data ">
-          {/* <RenterInfo data={selectedItem} /> */}
+          <RenterInfo selectedItem={selectedItem} />
         </section>
+        
         <section className="mx-auto my-5 item_renter-order shadow-lg p-4 ">
-          {/* <OrderItem data={selectedItem} /> */}
+          <OrderItem data={selectedItem} />
         </section>
+        
       </Box>
     </div>
   );

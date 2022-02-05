@@ -20,7 +20,7 @@ const Header = () => {
       />
       </Link>
       <div className="header__center d-flex align-items-center">
-        <input type="text" placeholder="Searching...." />
+        <input type="text" placeholder="Searching...."  className='fs-4'/>
         <SearchIcon className="fs-1" />
       </div>
 

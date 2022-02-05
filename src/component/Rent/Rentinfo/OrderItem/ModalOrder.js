@@ -14,7 +14,7 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 const ModalOrder = (props) => {
-   const {title , price , id} = props.data;
+   const {title , price , id,img} = props.data;
    const Total = price * props.days
   return (
     <div>
@@ -25,32 +25,30 @@ const ModalOrder = (props) => {
         onClose={props.Close}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle className="fs-1 text-capitalize">{title}</DialogTitle>
+        <DialogTitle className="fs-1 text-capitalize dark color">
+          {title}
+        </DialogTitle>
         <DialogContent>
           <DialogContentText
             id="alert-dialog-slide-description"
-            className="fs-4 "
+            className="fs-43"
           >
             <div className="d-flex  align-items-center ">
               <div className="modal_box me-3">
-                <img
-                  src={require(`../../../../asset/camer${id}.jpg`)}
-                  alt="img"
-                  className="modal_img rounded"
-                />
+                <img src={img.main} alt="img" className="modal_img rounded" />
               </div>
-              <h2>
-                are sure to rent this {title}  in {props.days} days and
-                their amount rent is and that day is ${Total}
-              </h2>
+              <p className="thrid-heading e color text-start fs-4">
+                are sure to rent this {title} in {props.days} days and their
+                amount rent is and that day is ${Total}
+              </p>
             </div>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.Close} className="fs-4">
+          <Button onClick={props.Close} className="fs-5">
             Cancle
           </Button>
-          <Button onClick={props.Close} className="fs-4">
+          <Button onClick={props.Close} className="fs-5">
             Rent
           </Button>
         </DialogActions>

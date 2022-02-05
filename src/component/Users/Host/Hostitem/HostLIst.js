@@ -1,12 +1,19 @@
+import { convertLength } from '@mui/material/styles/cssUtils';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import HostItem from './HostItem';
 
-const HostLIst = (props) => {
+const HostLIst = () => {
   
+  const hostItems = useSelector(state => state.HostItem)
+  console.log(hostItems);
   return (
     <div>
-      {props.hostItem.map((item, index) => (
-        <HostItem item = {item} key={index} />
+      {hostItems.map((item,index) => (
+        <HostItem
+          item={item}
+          key={item.id}
+        />
       ))}
     </div>
   );

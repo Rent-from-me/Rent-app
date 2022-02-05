@@ -4,19 +4,21 @@ import Avatar from "@mui/material/Avatar";
 import "./RenterInfo.css";
 
 const RenterInfo = (props) => {
-  const { id, title, date, desc, comments,review,reviewer} = props.data;
+  const { id, title, date, desc, comments, review, reviewer,hoster } =
+    props.selectedItem;
+  
   return (
     <>
       <section className="d-flex align-items-center mb-3 ">
         <div class="avatar-renter ">
           <Avatar
             alt="Remy Sharp"
-            src={require(`../../../../asset/camer${id}.jpg`)}
+            src={hoster.img}
             sx={{ width: 56, height: 56 }}
           />
         </div>
         <div>
-          <h5 className="text-capitalize thrid-heading ms-3 fs-2">{title} </h5>
+          <h5 className="text-capitalize thrid-heading ms-3 fs-2">{hoster.name} </h5>
           <h5 className="text-capitalize ms-3">{date}</h5>
         </div>
       </section>

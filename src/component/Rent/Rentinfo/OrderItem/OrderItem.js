@@ -12,6 +12,7 @@ const OrderItem = (props) => {
   const [location,setLocation] = useState("")
   const [open, setOpen] = useState(false);
   
+  
   const handleClickOpen = (e) => {
     e.preventDefault();
     setOpen(true);
@@ -39,7 +40,10 @@ const OrderItem = (props) => {
   const InTime = checkout - checkin;
   const InDays = InTime / (1000 * 3600 * 24);
 
-
+  const openModel = () => {
+    return checkin && checkout && location
+  }
+  
   return (
     <form className="fs-4 " onSubmit={handleClickOpen}>
       <h5 className="thrid-heading pt-4 mt-3 ">
@@ -77,7 +81,7 @@ const OrderItem = (props) => {
         />
       </div>
 
-      <button className="fs-2 form_btn mt-4 shadow-sm rounded-pill py-2">
+      <button className="fs-2 form_btn mt-4 shadow-sm rounded-pill py-2" >
         Rent
       </button>
 
@@ -85,6 +89,7 @@ const OrderItem = (props) => {
         <h4>total</h4>
         <h4>${InDays <= 0 ? price : price * InDays}</h4>
       </div>
+      
       {open && <ModalOrder Open={handleClickOpen} Close={handleClose} data={props.data} days ={InDays}/>}
     </form>
   );

@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import StarIcon from "@mui/icons-material/Star";
-import "./HostItem.css"
+import "./HostItem.css";
+import { deleteItem } from "../../../../store/Actions/RentActions";
+import { useDispatch } from "react-redux";
 
 const HostItem = (props) => {
-    const {title,img,price,desc,review} = props.item
+  const { title, img, price, desc, review, id } = props.item;
+  const dispatch = useDispatch();
   
-    console.log(img);
-
+  const removeItem = (e) => {
+    dispatch(deleteItem(e))
+  }
   return (
-    <div className="host__item">
+    <div className="host__item" onClick={() => removeItem(id)} >
       <img src={img.main} alt="img" />
       <FavoriteBorderOutlinedIcon className="host__item__heart fs-2" />
 
@@ -23,10 +27,10 @@ const HostItem = (props) => {
         <div className="host__item__infoBottom">
           <div className="host__item__stars">
             <StarIcon className="host__item__star fs-2" />
-              <strong className="fs-4">{review}</strong>
+            <strong className="fs-4">{review}</strong>
           </div>
           <div className="host__items__price">
-            <h2>{price}/day</h2>
+            <h3>{price}/day</h3>
           </div>
         </div>
       </div>

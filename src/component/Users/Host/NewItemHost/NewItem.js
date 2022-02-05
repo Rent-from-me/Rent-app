@@ -6,8 +6,17 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../../store/Actions/RentActions";
 
 const NewItem = (props) => {
+  const dispatch = useDispatch()
+  
+  const addNewItem = (e) => {
+    console.log(e);
+    dispatch(addItem(e))
+  }
+  
   const [imagesUpload, setImagesUpload] = useState([]);
   const init = {
     id: Date.now(),
@@ -41,7 +50,6 @@ const NewItem = (props) => {
  
   const hadleChange = (event) => {
     const addNew = {...newItem, [event.target.name]: event.target.value}
-    
     setNewItem(addNew)
   } 
     const img = {
@@ -55,11 +63,11 @@ const NewItem = (props) => {
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.add(newItem);
+    addNewItem(newItem);
     setNewItem(init);
   }
   
-  // console.log(newItem);
+  console.log(newItem);
   return (
     
     <div className="new__item fs-4">

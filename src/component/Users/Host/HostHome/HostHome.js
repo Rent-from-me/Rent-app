@@ -10,7 +10,7 @@ const HostHome = (props) => {
     <div className="host-home  ">
       <HostHeader />
       <section>
-        <HostLIst hostItem={props.hostList} />
+        <HostLIst  deleted ={props.deleted}  />
       </section>
     </div>
   );
