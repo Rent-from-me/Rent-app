@@ -13,9 +13,9 @@ import { useSelector } from "react-redux";
 const RentItemInfo = (props) => {
 
   const params = useParams();
-  console.log(params);
+
   const rentItem = useSelector(state => state.HostItem)
-  console.log("Itemin",rentItem);
+ 
   const selectedItem = rentItem.find((selected) => selected.id === +params.id );
   
   const { id, title, img, reviewer, review,location} = selectedItem;

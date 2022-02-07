@@ -6,21 +6,23 @@ import "./Header.css"
 import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Avatar } from '@mui/material';
+import { Avatar, useSlider } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const profileImg = useSelector((state) => state.profile.img);
   
   return (
     <header className="header  d-flex align-items-center justify-content-between fs-4 shadow-sm mb-4">
       <Link to="/">
-      <img
-        src={require(`../../asset/logo.png`)}
-        alt="logo"
-        className="header__logo"
-      />
+        <img
+          src={require(`../../asset/logo.png`)}
+          alt="logo"
+          className="header__logo"
+        />
       </Link>
       <div className="header__center d-flex align-items-center">
-        <input type="text" placeholder="Searching...."  className='fs-4'/>
+        <input type="text" placeholder="Searching...." className="fs-4" />
         <SearchIcon className="fs-1" />
       </div>
 
@@ -32,7 +34,9 @@ const Header = () => {
         </h4>
         <LanguageIcon className="fs-1  me-2" />
         <ExpandMoreIcon className="fs-1 me-2" />
-        <Avatar className="fs-1" />
+        <NavLink to="/Profile">
+          <Avatar className="fs-1" src={profileImg} />
+        </NavLink>
       </div>
     </header>
   );

@@ -4,13 +4,13 @@ import HostHeader from './HostHeader';
 import "./HostHome.css"
 
 
-const HostHome = (props) => {
+const HostHome = () => {
   
   return (
     <div className="host-home  ">
       <HostHeader />
       <section>
-        <HostLIst  deleted ={props.deleted}  />
+        <HostLIst />
       </section>
     </div>
   );

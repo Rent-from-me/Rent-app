@@ -38,6 +38,13 @@ export const init = {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
         },
         {
+          name: "farhan muxumed",
+          date: "jan-27-22",
+          img: "https://bit.ly/3L3wXra",
+          comment:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+        },
+        {
           name: "jacfar muusa",
           date: "jan-27-22",
           img: "https://bit.ly/3ogbeCw",
@@ -52,7 +59,7 @@ export const init = {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
         },
         {
-          name: "farhan muxumed",
+          name: "cayto",
           date: "jan-27-22",
           img: "https://bit.ly/3L3wXra",
           comment:

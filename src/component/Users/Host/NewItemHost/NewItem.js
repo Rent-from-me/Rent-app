@@ -23,6 +23,7 @@ const NewItem = (props) => {
     img: {},
     title: "",
     location: "",
+    comments: [],
     price: "",
     review: 0,
     date: Date.now(),

@@ -2,6 +2,8 @@
 // Action Type 
 export const DELTEDE_ITEM = "DELTEDE_ITEM";
 export const ADD_ITEM = "ADD_ITEM";
+export const ADD_ITEM_RENT = "ADD_ITEM_RENT";
+export const RENT_ITEM = "RENT_ITEM";
 
 
 //Action creator 
@@ -13,10 +15,26 @@ export const deleteItem = (id) => {
 }
 
 export const addItem = (addItem) => {
-    console.log(addItem);
     return {
       type: ADD_ITEM,
-      payload : addItem
+      payload : addItem,
+      hoster: {
+        name:null,
+        img:null
+      }
     };
 }
+export const addItemRent = (addRentItem) => {
+  return {
+    type: ADD_ITEM_RENT,
+    payload: addRentItem,
+  };
+};
 
+export const rentItem = (rentItem) => {
+
+  return {
+    type:RENT_ITEM,
+    payload:rentItem
+  }
+}

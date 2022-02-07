@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -6,16 +6,24 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-
-import "./ModalOrder.css"
+import { useDispatch } from "react-redux";
+import { addItemRent } from "../../../../store/Actions/RentActions";
+import "./ModalOrder.css";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const ModalOrder = (props) => {
-   const {title , price , id,img} = props.data;
-   const Total = price * props.days
+  const { title, price, id, img } = props.data;
+  const Total = price * props.days;
+  console.log(props.data);
+  const dispatch = useDispatch();
+
+  const addRentItem = (e) => {
+    dispatch(addItemRent(e));
+  };
+
   return (
     <div>
       <Dialog
@@ -48,7 +56,12 @@ const ModalOrder = (props) => {
           <Button onClick={props.Close} className="fs-5">
             Cancle
           </Button>
-          <Button onClick={props.Close} className="fs-5">
+          <Button
+            type="submit"
+            onDoubleClick={props.Close}
+            onClick={() => addRentItem(props.data)}
+            className="fs-5"
+          >
             Rent
           </Button>
         </DialogActions>
