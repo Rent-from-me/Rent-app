@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux';
 import ProfileHeader from '../profile/ProfileHeader';
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import StarIcon from "@mui/icons-material/Star";
+import Rating from '../../../Rent/Rentinfo/Reviewer/Rating';
+
+
 
 const UserRentItem = () => {
   const rentItem = useSelector(state => state.rentItem)
@@ -34,6 +37,7 @@ const UserRentItem = () => {
                  </div>
                </div>
              </div>
+            <Rating/>
            </div>
         ))
       }

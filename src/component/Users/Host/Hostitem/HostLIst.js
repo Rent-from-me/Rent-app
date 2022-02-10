@@ -9,9 +9,9 @@ const HostLIst = () => {
   console.log(hostItems);
   return (
     <div>
-      {hostItems.map((item,index) => (
+      {hostItems.map((item) => (
         <HostItem
-          item={item}
+          {...item}
           key={item.id}
         />
       ))}

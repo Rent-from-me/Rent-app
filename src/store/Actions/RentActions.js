@@ -4,6 +4,7 @@ export const DELTEDE_ITEM = "DELTEDE_ITEM";
 export const ADD_ITEM = "ADD_ITEM";
 export const ADD_ITEM_RENT = "ADD_ITEM_RENT";
 export const RENT_ITEM = "RENT_ITEM";
+export const RATING = "RATING";
 
 
 //Action creator 
@@ -34,7 +35,16 @@ export const addItemRent = (addRentItem) => {
 export const rentItem = (rentItem) => {
 
   return {
-    type:RENT_ITEM,
+    type:RATING,
     payload:rentItem
   }
 }
+export const rateItem = (Item) => {
+
+  return {
+    type:RENT_ITEM,
+    payload:Item
+  }
+}
+
+

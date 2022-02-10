@@ -5,8 +5,8 @@ import "./HostItem.css";
 import { deleteItem } from "../../../../store/Actions/RentActions";
 import { useDispatch } from "react-redux";
 
-const HostItem = (props) => {
-  const { title, img, price, desc, review, id } = props.item;
+const HostItem = ({ title, img, price, desc, review, id }) => {
+  // console.log(title, img, price, desc, review, id);
   const dispatch = useDispatch();
   
   const removeItem = (e) => {

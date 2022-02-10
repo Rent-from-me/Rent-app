@@ -9,7 +9,7 @@ const RenterInfo = (props) => {
     props.selectedItem;
   const fristFourItem = 4;
   const [comment, setComment] = useState(comments.slice(0, fristFourItem));
-
+  console.log(props.selectedItem);
   return (
     <>
       <section className="d-flex align-items-center mb-3 ">

@@ -22,9 +22,11 @@ import ChatUser from './component/Users/user/ChatUser/ChatUser';
 function App() {
    const init = useSelector((state) => state);
    const [allData,setAllData] = useState(init)
+   
    useEffect(() => {
      getToLocalStorage();
    }, []);
+   
    useEffect(() => {
     saveToLocalStorage()
    }, [allData]);
@@ -36,14 +38,13 @@ function App() {
   
   //Get to local storage
   const getToLocalStorage = () => {
-    if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify([]))
+    if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify({}))
     else {
       let localData = JSON.parse(localStorage.getItem("Data"))
       // {localData && addRentItem ? }
       if(localData  ) setAllData(localData);
     }
   }
-  console.log(allData);
  
   return (
     <div className="App">
