@@ -19,7 +19,8 @@ const RentItemInfo = (props) => {
   const selectedItem = rentItem.find((selected) => selected.id === +params.id );
   
   const { id, title, img, reviewer, review,location} = selectedItem;
-
+  
+  console.log(selectedItem);
   
   return (
     <div className="item__info">

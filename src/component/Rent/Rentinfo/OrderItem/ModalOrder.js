@@ -17,7 +17,7 @@ const Transition = forwardRef(function Transition(props, ref) {
 const ModalOrder = (props) => {
   const { title, price, id, img } = props.data;
   const Total = price * props.days;
-  console.log(props.data);
+ 
   const dispatch = useDispatch();
 
   const addRentItem = (e) => {

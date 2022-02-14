@@ -23,28 +23,29 @@ function App() {
    const init = useSelector((state) => state);
    const [allData,setAllData] = useState(init)
    
-   useEffect(() => {
-     getToLocalStorage();
-   }, []);
+  //  useEffect(() => {
+  //    getToLocalStorage();
+  //  }, []);
    
-   useEffect(() => {
-    saveToLocalStorage()
-   }, [allData]);
+  //  useEffect(() => {
+  //   saveToLocalStorage()
+  //  }, [allData]);
    
-  //save to local storage 
-  const saveToLocalStorage = () => {
-    localStorage.setItem("Data", JSON.stringify(allData));
-  }
+  // //save to local storage 
+  // const saveToLocalStorage = () => {
+  //   localStorage.setItem("Data", JSON.stringify(allData));
+  // }
   
-  //Get to local storage
-  const getToLocalStorage = () => {
-    if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify({}))
-    else {
-      let localData = JSON.parse(localStorage.getItem("Data"))
-      // {localData && addRentItem ? }
-      if(localData  ) setAllData(localData);
-    }
-  }
+  // //Get to local storage
+  // const getToLocalStorage = () => {
+  //   if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify({}))
+  //   else {
+  //     let localData = JSON.parse(localStorage.getItem("Data"))
+  //     // {localData && addRentItem ? }
+  //     if(localData  ) setAllData(localData);
+  //   }
+  // }
+
  
   return (
     <div className="App">
@@ -55,21 +56,23 @@ function App() {
           <Header>
             <Header />
           </Header>
-          <section className='main__section'>
-            <Routes>
-              <Route path="/New" element={<NewItem />} />
-              <Route path="/Register" element={<Register />} />
-              <Route path="/RentList" element={<RentList />} />
-              <Route path="/Profile" element={<Profile />} />
-              <Route path="/ProfileRentItem" element={<UserRentItem />} />
-              <Route path="/ProfileChat" element={<ChatUser />} />
-              <Route path="/RentItemInfo/:id" element={<RentItemInfo />} />
-              <Route path="/Host" element={<HostHome />} />
-              <Route path="/Chat" element={<Chat />} />
 
-              <Route path="/" element={<Home />} />
-            </Routes>
-          </section>
+            <section className="main__section">
+              <Routes>
+                <Route path="/New" element={<NewItem />} />
+                <Route path="/Register" element={<Register />} />
+                <Route path="/RentList" element={<RentList />} />
+                <Route path="/Profile" element={<Profile />} />
+                <Route path="/ProfileRentItem" element={<UserRentItem />} />
+                <Route path="/ProfileChat" element={<ChatUser />} />
+                <Route path="/RentItemInfo/:id" element={<RentItemInfo />} />
+                <Route path="/Host" element={<HostHome />} />
+                <Route path="/Chat" element={<Chat />} />
+
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </section>
+
           <Footer />
         </>
       )}

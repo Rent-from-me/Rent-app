@@ -6,10 +6,11 @@ import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 const RenterInfo = (props) => {
   const { id, title, date, desc, comments, review, reviewer, hoster } =
-    props.selectedItem;
+  props.selectedItem;
+
   const fristFourItem = 4;
   const [comment, setComment] = useState(comments.slice(0, fristFourItem));
-  console.log(props.selectedItem);
+
   return (
     <>
       <section className="d-flex align-items-center mb-3 ">

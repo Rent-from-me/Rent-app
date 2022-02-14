@@ -6,9 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import { combineReducers, createStore } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import {RentReducer} from './store/Reducers/RentReducer';
+
 
 const store = createStore(RentReducer);
 

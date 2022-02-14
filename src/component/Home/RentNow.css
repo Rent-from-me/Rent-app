@@ -1,30 +1,48 @@
-.rentnow {
+.rent__now {
+  width: 95%;
+  margin: 4rem auto;
   display: flex;
+  height: 40rem; /*testing*/
+}
+.rent__now__info {
+  width: 25rem;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.rent__now__info > h1 {
+  font-size: 4rem;
+}
+.rent__now__info button,.rent__now__info button:hover {
+  background: black;
+  margin-top: 1rem;
+  color: white;
+}
+.rent__now__images {
+  flex: 1;
   position: relative;
-  margin: 20px;
-  padding: 20px;
-  border-bottom: 1px solid lightgray;
-  cursor: pointer;
+  margin-left: 5rem;
+  margin-top: 2rem;
 }
-
-.rentnow > img {
-  width: 45%;
-  border-radius: 10px;
-  overflow: hidden;
+.images {
+  max-width: 35rem;
+  max-height: 25rem;
+  position: absolute;
+  border-radius: 3rem;
 }
-
-.rentnow__info {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
+.image-1 {
+  top: 10%;
+  transform: rotate(-15deg);
+  z-index: 20;
 }
-
-.btn{
-    background-color: black !important;
-
+.image-2 {
+  top: 15%;
+  left: 30%;
+  transform: rotate(-20deg);
+  z-index: 10;
 }
-.btn:hover{
-    color: white !important;
+.image-3 {
+  top: 8%;
+  right: -5rem;
+  transform: rotate(20deg);
 }

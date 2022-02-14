@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import "./Rating.css";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import {rateItem} from "../../../../store/Actions/RentActions"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { rateItem } from "../../../../store/Actions/RentActions";
 
-const Rating = () => {
+const Rating = ({ id }) => {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0);
+
+    const date = new Date();
+    const year = date.getFullYear().toString();
+    const d = date.getDate().toString();
+    const options = { month: "long" };
+    const M = new Intl.DateTimeFormat("en-US", options)
+      .format(date)
+      .toLowerCase()
+      .slice(0, 3);
+      ;
+    const fullDate = M + "-" + d + "-" + year;
+    console.log(fullDate);
+
 
   const [rating, setRating] = useState({
     star: 0,
@@ -16,14 +29,20 @@ const Rating = () => {
   });
 
   rating.star = currentValue;
+  rating.date = fullDate;
 
+  const data = useSelector((state) => state);
+  console.log(data);
+
+  const item = data.HostItem.find((item) => (item.id === id ? item : null));
+
+  console.log(item);
   const dispatch = useDispatch();
-  
+
   const addRating = (e) => {
-     dispatch(rateItem(e));
-  }
-  
-  
+    dispatch(rateItem(e, id));
+  };
+
   const handleClick = (value) => {
     setCurrentValue(value);
   };
@@ -43,7 +62,7 @@ const Rating = () => {
 
   const submitHadle = (e) => {
     e.preventDefault();
-    addRating(rating)
+    addRating(rating);
   };
 
   return (

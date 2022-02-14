@@ -1,5 +1,4 @@
 import { init } from "../../DummyDate";
-import data from "../../db.json"
 import {
   ADD_ITEM,
   DELTEDE_ITEM,
@@ -8,7 +7,6 @@ import {
 } from "../Actions/RentActions";
 
 export const RentReducer = (state = init, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -30,21 +28,26 @@ export const RentReducer = (state = init, action) => {
         ...state,
         rentItem: [...state.rentItem, { ...action.payload }],
       };
+
     case RATING:
       return {
         ...state,
-        HostItem: {
-          comments: [
-            ...state.HostItem.comments,
-            {
-              comment:action.payload.comment,
-              img: state.profile.img,
-              name: state.profile.name.at,
-              date: action.payload.date,
-            },
-          ],
-          review: action.payload.star,
-        },
+        HostItem: state.HostItem.map((item) =>
+          item.id === action.id
+            ? {
+                ...item,
+                review: action.payload.star,
+                comments: [
+                  ...item.comments,
+                  {
+                    ...action.payload,
+                    name: state.profile.name,
+                    img: state.profile.img,
+                  },
+                ],
+              }
+            : item
+        ),
       };
     case DELTEDE_ITEM:
       return {
@@ -55,3 +58,22 @@ export const RentReducer = (state = init, action) => {
       return state;
   }
 };
+// state.HostItem.find(item =>
+//           item.id === action.id ? {
+//           ...state,
+//           HostItem
+//           {
+//             ...item,
+//             review : action.payload.star,
+//             comments:[
+//               ...item.comments,
+//               {
+//                 name : state.profile.name,
+//                 img: state.profile.img,
+//                 Comment:action.payload.Comment,
+//                 date:action.payload.Comment.date,
+//               }
+//             ]
+//           }
+//           }
+//           : state

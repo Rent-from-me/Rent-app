@@ -1,6 +1,6 @@
 .banner {
   background: url("https://bit.ly/3s6TavS") center center;
-  height: 70vh;
+  height: 80vh;
   background-size: cover;
   position: relative;
 }
@@ -8,7 +8,7 @@
 .banner__info {
     background-color: black;
     color: white;
-    padding-top: 25vh;
+    padding-top: 30vh;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 40px;

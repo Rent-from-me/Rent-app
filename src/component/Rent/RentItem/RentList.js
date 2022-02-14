@@ -6,7 +6,7 @@ import "./RentList.css"
 
 const RentList = () => {
    const rent = useSelector(state => state.HostItem)
-
+   console.log(rent);
   return (
     <div className="rent-list ps-4">
       <h1 className="primary-heading ms-4">Rent List</h1>

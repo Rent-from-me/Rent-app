@@ -1,9 +1,26 @@
 /* Footer css  */
-footer {
-  border-top: 2px solid lightgray ;
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.text-center {
-  text-align: center;
-  font-weight: bold;
-  
+
+.cards__item {
+  flex-basis: 25%;
+  margin: 5rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: felx;
+}
+.cards__item > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards__item > div > a,.cards__item > div > a:focus {
+  color: black !important;
+  text-decoration: none;
+  margin-bottom: 1rem;
 }

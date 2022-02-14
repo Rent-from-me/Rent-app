@@ -13,7 +13,6 @@ const NewItem = (props) => {
   const dispatch = useDispatch()
   
   const addNewItem = (e) => {
-    console.log(e);
     dispatch(addItem(e))
   }
   
@@ -65,7 +64,7 @@ const NewItem = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewItem(newItem);
-    setNewItem(init);
+    // setNewItem(init);
   }
   
   console.log(newItem);

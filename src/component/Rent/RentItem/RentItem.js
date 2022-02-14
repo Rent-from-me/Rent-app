@@ -3,7 +3,7 @@ import "./RentItem.css";
 
 
 const RentItem = ({id,img,title,price,review,date}) => {
-  console.log(id, img, title, price, review, date);
+ 
   return (
     <div className="rent__item me-4 mb-4 rounded">
       <img

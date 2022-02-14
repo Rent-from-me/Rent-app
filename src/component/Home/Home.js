@@ -1,13 +1,16 @@
 import React from 'react';
 import Banner from './Banner';
 import RentNow from "./RentNow"
-import BecomeRenter from "./BecomeRenter"
+import Discover from "./Discover"
+import BecomeHost from "./BecomeHost"
+
 const Home = () => {
   return (
     <div>
       <Banner />
+      <Discover />
       <RentNow />
-      <BecomeRenter />
+      <BecomeHost />
     </div>
   );
 };
