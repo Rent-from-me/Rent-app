@@ -168,18 +168,3 @@ const NewItem = (props) => {
 };
 
 export default NewItem;
-//id
-//       img: {
-//         main: "https://bit.ly/3L4Cxt6",
-//         sub1: "https://bit.ly/3HkU9Pk",
-//         sub2: "https://bit.ly/3ueqYJV",
-//         sub3: "https://bit.ly/3rjqxfN",
-//         sub4: "https://bit.ly/3GgPBbl",
-//       },
-//       title: "Kodak PIXPRO FZ53 16.15MP",
-//       location: "Hargiesa",
-//       price: "50",
-//       review: 1,
-//       date: "mar-7-21",
-//       reviewer: 26,
-//       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",

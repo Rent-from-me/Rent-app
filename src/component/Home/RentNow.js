@@ -32,26 +32,6 @@ const RentNow = () => {
         />
       </div>
     </div>
-    // <div className="container-fluid  my-5">
-    //   <div class="row">
-    //     <div class="col">
-    //       <div className="rentnow__info ">
-    //         <div>
-    //           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-    //           Doloremque modi hic voluptas consectetur tempore voluptate
-    //           perferendis impedit molestias necessitatibus reprehenderit. Dicta
-    //           asperiores temporibus maxime ?
-
-    //     </div>
-    //     <div class="col">
-
-    //     </div>
-    //   </div>
-    // </div>
-    // <div className="rentnow">
-    //   <img src="https://bit.ly/3ATe2L4" alt="img" />
-
-    // </div>
   );
 };
 

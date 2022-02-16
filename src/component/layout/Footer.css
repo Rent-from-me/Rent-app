@@ -1,5 +1,8 @@
 /* Footer css  */
-
+footer{
+  color: white;
+  background: black;
+}
 
 .cards {
   display: flex;
@@ -8,19 +11,24 @@
 }
 
 .cards__item {
-  flex-basis: 25%;
+  flex-basis: 20%;
   margin: 5rem auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
   display: felx;
 }
 .cards__item > div {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 10rem;
 }
 
-.cards__item > div > a,.cards__item > div > a:focus {
-  color: black !important;
+.cards__item > div > a {
+  color: rgba(255, 255, 255, 0.652) !important;
   text-decoration: none;
   margin-bottom: 1rem;
+  transition: all .3s;
+}
+.cards__item > div > a:hover {
+  color: rgb(255, 255, 255) !important;
+  transform: scale(1.05);
 }

@@ -16,17 +16,18 @@ font-size: 4rem;
   background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), transparent),
     url("https://bit.ly/33jFy87");
   width: 50%;
-  background-size: contain;
-  background-position: top;
+  background-size: fill;
+  background-position: center;
   height: 100%;
   margin-right: 2rem;
   border-radius: 2rem;
+  
 }
 .composition__right {
   background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.6), transparent),
     url("https://bit.ly/3HQt0Uy");
   width: 50%;
-  background-size: contain;
+  background-size: cover;
   height: 100%;
   border-radius: 2rem;
 }
@@ -50,4 +51,18 @@ font-size: 4rem;
   padding: 0.7rem 3rem;
   color: black;
   background-color: white;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .composition{
+    flex-direction: column;
+  }
+  .composition__left{
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .composition__right{
+    width: 100%;
+  }
 }
