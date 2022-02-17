@@ -64,7 +64,7 @@ const HostItem = ({ title, img, price, desc, review, id }) => {
         </div>
 
         <div className="hostitem__center"></div>
-        {open && <UpdateHostItem open={handleClickOpen} close={handleClose} state = {open}/>}
+        {open && <UpdateHostItem open={handleClickOpen} close={handleClose} state = {open} id= {id}/>}
       </div>
     </div>
   );

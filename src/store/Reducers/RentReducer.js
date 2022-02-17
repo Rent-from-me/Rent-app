@@ -4,9 +4,11 @@ import {
   DELTEDE_ITEM,
   ADD_ITEM_RENT,
   RATING,
+  UPDATE,
 } from "../Actions/RentActions";
 
 export const RentReducer = (state = init, action) => {
+  console.log(action.payload,action.id);
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -45,6 +47,21 @@ export const RentReducer = (state = init, action) => {
                     img: state.profile.img,
                   },
                 ],
+              }
+            : item
+        ),
+      };
+    case UPDATE:
+      return {
+        ...state,
+        HostItem: state.HostItem.map((item) =>
+          item.id === action.id
+            ? {
+                ...item,
+                img: action.payload.img,
+                title: action.payload.title,
+                price: action.payload.price,
+                desc: action.payload.desc,
               }
             : item
         ),

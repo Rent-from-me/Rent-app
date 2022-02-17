@@ -7,73 +7,84 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-
-// only testing 
+// only testing
 import TitleIcon from "@mui/icons-material/Title";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import { useDispatch } from "react-redux";
-import { addItem } from "../../../../store/Actions/RentActions";
+import { useDispatch, useSelector } from "react-redux";
+import { updateItem } from "../../../../store/Actions/RentActions";
+
+//form initial state
+const init = {
+  img: {},
+  title: "",
+  price: "",
+  desc: "",
+};
 
 const UpdateHostItem = (props) => {
-    
-     const dispatch = useDispatch();
+  const [update, setUpdate] = useState(init);
 
-     const addNewItem = (e) => {
-       dispatch(addItem(e));
-     };
+  //upload images
+  const [imagesUpload, setImagesUpload] = useState([]);
+  const imageUploder = (e) => {
+    if (e.target.files) {
+      const fileArray = Array.from(e.target.files).map((file) =>
+        URL.createObjectURL(file)
+      );
+      setImagesUpload((preImage) => preImage.concat(fileArray));
+    }
 
-     const [imagesUpload, setImagesUpload] = useState([]);
-     const init = {
-       id: Date.now(),
-       img: {},
-       title: "",
-       location: "",
-       comments: [],
-       price: "",
-       review: 0,
-       date: Date.now(),
-       reviewer: 0,
-       desc: "",
-     };
-     const [newItem, setNewItem] = useState(init);
+    Array.from(e.target.files).map((file) => URL.revokeObjectURL(file));
+  };
 
-     const imageUploder = (e) => {
-       if (e.target.files) {
-         const fileArray = Array.from(e.target.files).map((file) =>
-           URL.createObjectURL(file)
-         );
-         setImagesUpload((preImage) => preImage.concat(fileArray));
-       }
+  //remove upload image u want
+  const removeOne = (index) => {
+    const remove = imagesUpload.filter((image, i) => i !== index);
+    setImagesUpload(remove);
+  };
 
-       Array.from(e.target.files).map((file) => URL.revokeObjectURL(file));
-     };
+  //get upload image and add to update state
+  const img = {
+    main: imagesUpload[0],
+    sub1: imagesUpload[1],
+    sub2: imagesUpload[2],
+    sub3: imagesUpload[3],
+    sub4: imagesUpload[4],
+  };
+  update.img = { ...img };
 
-     const removeOne = (index) => {
-       const remove = imagesUpload.filter((image, i) => i !== index);
-       setImagesUpload(remove);
-     };
+  //connected to redux
+  const dispatch = useDispatch();
 
-     const hadleChange = (event) => {
-       const addNew = { ...newItem, [event.target.name]: event.target.value };
-       setNewItem(addNew);
-     };
-     const img = {
-       main: imagesUpload[0],
-       sub1: imagesUpload[1],
-       sub2: imagesUpload[2],
-       sub3: imagesUpload[3],
-       sub4: imagesUpload[4],
-     };
-     newItem.img = { ...img };
+  const updateHostItem = (e) => {
+    dispatch(updateItem(e, props.id));
+  };
 
-     const handleSubmit = (e) => {
-       e.preventDefault();
-       addNewItem(newItem);
-       // setNewItem(init);
-     };
+  //  const data = useSelector((state) => state.HostItem);
+
+  //  const selected = data.find((item) => item.id === props.id);
+  //  const [uSeleteced, setUSeleteced] = useState(selected);
+  //  console.log(selected);
+
+  //Handles 
+  const hadleChange = (event) => {
+    const addNew = {
+      ...update,
+      [event.target.name]: event.target.value,
+    };
+    setUpdate(addNew);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateHostItem(update);
+  };
+
+  console.log(update);
+
   return (
     <div>
       <Dialog open={props.state} onClose={props.close} className="updatehost">
@@ -81,7 +92,6 @@ const UpdateHostItem = (props) => {
         <DialogContent>
           <DialogContentText></DialogContentText>
           <div className="new__item__con">
-
             <form action="" className="new__item__form" onSubmit={handleSubmit}>
               <div className="form__top">
                 <div className="new__item__input">
@@ -89,20 +99,9 @@ const UpdateHostItem = (props) => {
                   <input
                     type="text"
                     placeholder="Add title"
+                    value={updateItem.title}
                     onChange={hadleChange}
-                    value={newItem.title}
                     name="title"
-                  />
-                </div>
-
-                <div className="new__item__input">
-                  <LocationOnOutlinedIcon className="icon" />
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="Add Location"
-                    onChange={hadleChange}
-                    value={newItem.location}
                   />
                 </div>
 
@@ -113,7 +112,7 @@ const UpdateHostItem = (props) => {
                     name="price"
                     placeholder="Add price"
                     onChange={hadleChange}
-                    value={newItem.price}
+                    value={updateItem.price}
                   />
                 </div>
 
@@ -121,7 +120,7 @@ const UpdateHostItem = (props) => {
                   name="desc"
                   cols="70"
                   rows="4"
-                  value={newItem.desc}
+                  value={updateItem.desc}
                   placeholder="Add some description"
                   onChange={hadleChange}
                 ></textarea>
@@ -161,7 +160,7 @@ const UpdateHostItem = (props) => {
                     </div>
                   </label>
 
-                  <button className="btn-grad">Add Item</button>
+                  <button className="btn-grad">Update Item</button>
                 </div>
               </div>
             </form>
