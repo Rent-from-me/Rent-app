@@ -1,0 +1,68 @@
+.discover {
+  margin: 5rem auto;
+}
+.discover > h1 {
+font-size: 4rem;
+}
+.composition {
+  width: 95%;
+  display: flex;
+  margin: 1rem auto;
+  padding: 2rem;
+  height: 70rem;
+}
+
+.composition__left {
+  background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), transparent),
+    url("https://bit.ly/33jFy87");
+  width: 50%;
+  background-size: fill;
+  background-position: center;
+  height: 100%;
+  margin-right: 2rem;
+  border-radius: 2rem;
+  
+}
+.composition__right {
+  background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.6), transparent),
+    url("https://bit.ly/3HQt0Uy");
+  width: 50%;
+  background-size: cover;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.composition__left--info {
+  width: 30rem;
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+
+.composition__left--info > h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+.composition__left--info .button,
+.composition__left--info .button:hover {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-transform: none;
+  padding: 0.7rem 3rem;
+  color: black;
+  background-color: white;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .composition{
+    flex-direction: column;
+  }
+  .composition__left{
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .composition__right{
+    width: 100%;
+  }
+}

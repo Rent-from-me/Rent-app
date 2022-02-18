@@ -1,0 +1,17 @@
+.reviewer__con{
+   width: 100%;
+}
+.no-comment {
+   width: 100%;
+   height: 20rem;
+   border-radius: 1rem;
+   background-color:rgba(220, 220, 220, 0.267);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.icon-warn{
+   transform: translateY(-.2rem);
+   color: red;
+}

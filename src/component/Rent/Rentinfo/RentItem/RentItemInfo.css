@@ -1,0 +1,45 @@
+.item__info {
+  width: 95%;
+  margin: 0 auto 50px auto;
+}
+.item__info_images {
+  border-radius: 1.5rem;
+}
+
+.item__info-img--main {
+  height: 30rem;
+
+}
+
+.item-info-img--subs {
+  height: 30rem;
+}
+
+.item-info-img--sub {
+  height: 15rem;
+  margin-bottom: 0.3rem;
+}
+.item__info_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid rgba(128, 128, 128, 0.322);
+  z-index: -100;
+}
+
+.item__info_img:hover {
+  box-shadow: none;
+}
+
+.item__info-detail {
+  width: 32rem;
+}
+
+.item__renter-data {
+  width: 65%;
+}
+.item_renter-order {
+   width: 30%;
+}
+
+

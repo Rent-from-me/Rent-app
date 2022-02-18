@@ -1,25 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink,Link} from 'react-router-dom';
 import "./Header.css"
+// import Avatar from "@mui/material/Avatar";
 
-// you can must deleted  this feel free (just for starting purpose just retrun code) 
+import SearchIcon from "@mui/icons-material/Search";
+import LanguageIcon from "@mui/icons-material/Language";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Avatar, useSlider } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const profileImg = useSelector((state) => state.profile.img);
+  
   return (
-    <div>
-      <ul class="nav nav-pills nav-fill m-2 shadow-sm p-3 mb-5 bg-body rounded">
-        <li class="nav-item">
-          <Link to="/">Home</Link>
-        </li>
-        <li class="nav-item"></li>
-        <li class="nav-item">
-          <Link to="/RentList">RentList</Link>
-        </li>
-        <li class="nav-item">
-          <Link to="/Auth">Profile</Link>
-        </li>
-      </ul>
-    </div>
+    <header className="header  d-flex align-items-center justify-content-between fs-4 shadow-sm mb-4">
+      <Link to="/">
+        <img
+          src={require(`../../asset/logo.png`)}
+          alt="logo"
+          className="header__logo"
+        />
+      </Link>
+      <div className="header__center d-flex align-items-center">
+        <input type="text" placeholder="Searching...." className="fs-4" />
+        <SearchIcon className="fs-1" />
+      </div>
+
+      <div className="header__right d-flex me-5 align-items-center justify-content-between">
+        <h4 className="fs-4 me-3">
+          <NavLink to="Host/" className="link">
+            Become a host
+          </NavLink>
+        </h4>
+        <LanguageIcon className="fs-1  me-2" />
+        <ExpandMoreIcon className="fs-1 me-2" />
+        <NavLink to="/Profile">
+          <Avatar className="fs-1" src={profileImg} />
+        </NavLink>
+      </div>
+    </header>
   );
 };
 

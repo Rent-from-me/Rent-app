@@ -1,0 +1,37 @@
+.banner {
+  background: url("https://bit.ly/3s6TavS") center center;
+  height: 80vh;
+  background-size: cover;
+  position: relative;
+}
+
+.banner__info {
+    background-color: black;
+    color: white;
+    padding-top: 30vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    width: 40rem;
+    height: 100%;
+}
+.banner__info > button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.banner__info > button:hover {
+    background-color: white;
+    color: #ff7779;
+  }
+  
+
+.banner__info > h5 {
+    margin-top: 10px;
+}
+.banner__info > h1{
+    font-size: 3.2rem;
+}

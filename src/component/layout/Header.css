@@ -1,1 +1,34 @@
 /* Header css */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+a:focus {
+  color: white !important;
+}
+
+.header__logo {
+  object-fit: contain;
+  height: 8rem;
+}
+
+.header__center{
+  flex: 1;
+  max-width: fit-content;
+  border: 1px solid lightgray;
+  border-radius: 10rem;
+  padding: .8rem 1rem;
+}
+
+.header__center > input {
+  width: 20rem;
+  border: none;
+}
+
+.header__center > input:focus {
+  outline: none;
+}

@@ -1,0 +1,99 @@
+.hostitem__con {
+    display: flex;
+    justify-content: center;
+}
+
+.hostitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 114rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0px;
+  margin-top: 3rem;
+  transition: all .3s;
+}
+
+.hostitem:hover {
+    transform: scale(1.005);
+}
+
+.hostitem__icon {
+    font-size: 2.5rem !important;
+}
+
+.hostitem__center {
+  width: 3rem;
+}
+
+.hostitem__box {
+  width: 34rem;
+  height: 22rem;
+}
+
+.hostitem__box--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hostitem__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: white;
+}
+
+.hostitem__info--line {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.hostitem__info__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hostitem__info__header span {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.hostitem__control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hostitem__control--star  {
+    display: flex;
+}
+.hostitem__control--star >  .hostitem__icon {
+    color: #FDCC0D;
+
+}
+.hostitem__control--star >  span {
+    font-weight: 600;
+    margin-left: .3rem;
+}
+
+.hostitem__control__btns{
+    display: flex;
+    width: 19rem;
+    justify-content: space-between;
+}
+.hostitem__control__btn {
+  width: 8rem;
+   color: white;
+  border: none;
+  padding: .7rem 1rem;
+  border-radius: 4px;
+}
+
+.hostitem__control__btn--update{
+  background: rgba(0, 128, 0, 0.8);
+}
+.hostitem__control__btn--delete{
+    background-color: rgba(255, 0, 0, 0.8);
+}

@@ -1,0 +1,48 @@
+.rent__now {
+  width: 95%;
+  margin: 4rem auto;
+  display: flex;
+  height: 40rem; /*testing*/
+}
+.rent__now__info {
+  width: 25rem;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.rent__now__info > h1 {
+  font-size: 4rem;
+}
+.rent__now__info button,.rent__now__info button:hover {
+  background: black;
+  margin-top: 1rem;
+  color: white;
+}
+.rent__now__images {
+  flex: 1;
+  position: relative;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+.images {
+  max-width: 35rem;
+  max-height: 25rem;
+  position: absolute;
+  border-radius: 3rem;
+}
+.image-1 {
+  top: 10%;
+  transform: rotate(-15deg);
+  z-index: 20;
+}
+.image-2 {
+  top: 15%;
+  left: 30%;
+  transform: rotate(-20deg);
+  z-index: 10;
+}
+.image-3 {
+  top: 8%;
+  right: -5rem;
+  transform: rotate(20deg);
+}
