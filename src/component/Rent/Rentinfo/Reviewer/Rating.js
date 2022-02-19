@@ -80,7 +80,7 @@ const Rating = (props) => {
     setRating(init)
     setHoverValue(undefined)
     setCurrentValue(0)
-    
+    props.close();
   };
 
   return (
@@ -92,7 +92,6 @@ const Rating = (props) => {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
             <form className="rating" onSubmit={submitHadle}>
               <h1> React Ratings </h1>
               <div>
@@ -123,9 +122,8 @@ const Rating = (props) => {
                 value={rating.comment}
               />
 
-              <button onClick={props.close}>Submit</button>
+              <button >Submit</button>
             </form>
-          </DialogContentText>
         </DialogContent>
       </Dialog>
     </div>
