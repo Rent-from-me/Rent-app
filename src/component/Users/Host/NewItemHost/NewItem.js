@@ -64,19 +64,15 @@ const NewItem = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewItem(newItem);
-    // setNewItem(init);
+    setNewItem(init);
+    setImagesUpload([])
   }
   
   console.log(newItem);
   return (
-    
     <div className="new__item fs-4">
       <HostHeader />
       <div className="new__item__con">
-        <div className="new__item__left__box">
-          <h1>add Item Now </h1>
-        </div>
-
         <form action="" className="new__item__form" onSubmit={handleSubmit}>
           <div className="form__top">
             <div className="new__item__input">
@@ -130,17 +126,15 @@ const NewItem = (props) => {
               onChange={imageUploder}
               multiple
             />
-          
+
             <div className="upload__display">
               <div className="images__upload__con">
                 {imagesUpload &&
                   imagesUpload.map((photo, index) => (
-                    
                     <div
                       className="images__upload"
                       key={index}
                       onClick={(e) => removeOne(index)}
-                 
                     >
                       <img src={photo} alt="uplood" key={index} />
                     </div>
@@ -153,12 +147,10 @@ const NewItem = (props) => {
             <div className="button">
               <label htmlFor="file">
                 <div className="btn-grad">
-                  <AddOutlinedIcon className="fs-1" />
                   upload photo
                 </div>
               </label>
-
-              <button className="btn-grad">Add Item</button>
+                <button className="btn-grad py-4 btn__add">Add Item</button>
             </div>
           </div>
         </form>

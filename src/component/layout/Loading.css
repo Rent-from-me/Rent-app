@@ -1,0 +1,19 @@
+.loading__con {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.loading {
+  border: 3px solid rgba(0, 0, 0, 0.87);
+  border-top-color: white;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

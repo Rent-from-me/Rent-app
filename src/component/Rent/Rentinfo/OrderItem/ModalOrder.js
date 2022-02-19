@@ -22,6 +22,7 @@ const ModalOrder = (props) => {
 
   const addRentItem = (e) => {
     dispatch(addItemRent(e));
+    props.Close();
   };
 
   return (
