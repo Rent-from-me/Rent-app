@@ -1,53 +1,45 @@
-import React, { useState, useEffect,Suspense } from "react";
-import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import React, { useState,useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
 
-import Loading from "./component/layout/Loading";
 
-const Login = React.lazy(() => import("./component/Users/user/Login"));
-const Register = React.lazy(() => import("./component/Users/user/Register"));
-const Header = React.lazy(() => import("./component/layout/Header"));
-const Footer = React.lazy(() => import("./component/layout/Footer"));
-const Home = React.lazy(() => import("./component/Home/Home"));
-const Profile = React.lazy(() =>
-  import("./component/Users/user/profile/Profile")
-);
-const RentList = React.lazy(() => import("./component/Rent/RentItem/RentList"));
-const RentItemInfo = React.lazy(() =>
-  import("./component/Rent/Rentinfo/RentItem/RentItemInfo")
-);
-const HostHome = React.lazy(() =>
-  import("./component/Users/Host/HostHome/HostHome")
-);
-const NewItem = React.lazy(() =>
-  import("./component/Users/Host/NewItemHost/NewItem")
-);
-const Chat = React.lazy(() => import("./component/Users/Host/chat/Chat"));
-const UserRentItem = React.lazy(() =>
-  import("./component/Users/user/UserRent/UserRentItem")
-);
-const ChatUser = React.lazy(() =>
-  import("./component/Users/user/ChatUser/ChatUser")
-);
+import Home from './component/Home/Home';
+import Footer from './component/layout/Footer';
+import Header from './component/layout/Header';
+import RentItemInfo from './component/Rent/Rentinfo/RentItem/RentItemInfo';
+import RentItem from './component/Rent/RentItem/RentItem';
+import RentList from './component/Rent/RentItem/RentList';
+import Chat from './component/Users/Host/chat/Chat';
+import HostHome from './component/Users/Host/HostHome/HostHome';
+import NewItem from './component/Users/Host/NewItemHost/NewItem';
+import Profile from './component/Users/user/profile/Profile';
+import UserRentItem from './component/Users/user/UserRent/UserRentItem';
+import Login from './component/Users/user/Login';
+import Register from './component/Users/user/Register';
+import ChatUser from './component/Users/user/ChatUser/ChatUser';
+import Loading from './component/layout/Loading';
+
+
+
 
 function App() {
-  const init = useSelector((state) => state);
-  const [allData, setAllData] = useState(init);
-
+   const init = useSelector((state) => state);
+   const [allData,setAllData] = useState(init)
+   
   //  useEffect(() => {
   //    getToLocalStorage();
   //  }, []);
-
+   
   //  useEffect(() => {
   //   saveToLocalStorage()
   //  }, [allData]);
-
-  // //save to local storage
+   
+  // //save to local storage 
   // const saveToLocalStorage = () => {
   //   localStorage.setItem("Data", JSON.stringify(allData));
   // }
-
+  
   // //Get to local storage
   // const getToLocalStorage = () => {
   //   if(localStorage.getItem("Data") === null) localStorage.setItem("Data", JSON.stringify({}))
@@ -58,8 +50,10 @@ function App() {
   //   }
   // }
 
+ 
   return (
     <div className="App">
+      {/* <Loading/> */}
       {!Register ? (
         <Login />
       ) : (
@@ -68,8 +62,8 @@ function App() {
             <Header />
           </Header>
 
-          <section className="main__section">
-              <Suspense fallback={<Loading/>}>
+
+            <section className="main__section">
               <Routes>
                 <Route path="/New" element={<NewItem />} />
                 <Route path="/Register" element={<Register />} />
@@ -83,8 +77,7 @@ function App() {
 
                 <Route path="/" element={<Home />} />
               </Routes>
-            </Suspense>
-          </section>
+            </section>
 
           <Footer />
         </>
