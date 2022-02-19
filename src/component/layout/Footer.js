@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p class="text-center border-top">Copyright &copy; Renter.com</p>
+      <p class="text-center border-top pt-2">Copyright &copy; Renter.com</p>
     </footer>
   );
 };

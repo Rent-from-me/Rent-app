@@ -81,6 +81,9 @@ const UpdateHostItem = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateHostItem(update);
+    setUpdate(init);
+    setImagesUpload([])
+    props.close();
   };
 
   console.log(update);
@@ -92,7 +95,12 @@ const UpdateHostItem = (props) => {
         <DialogContent>
           <DialogContentText></DialogContentText>
           <div className="new__item__con">
-            <form action="" className="new__item__form" onSubmit={handleSubmit}>
+            <form
+              action=""
+              className="new__item__form"
+              onSubmit={handleSubmit}
+              style={{ width: 50 + "rem" }}
+            >
               <div className="form__top">
                 <div className="new__item__input">
                   <TitleIcon className="icon" />
@@ -155,12 +163,11 @@ const UpdateHostItem = (props) => {
                 <div className="button">
                   <label htmlFor="file">
                     <div className="btn-grad">
-                      <AddOutlinedIcon className="fs-1" />
                       upload photo
                     </div>
                   </label>
 
-                  <button className="btn-grad">Update Item</button>
+                  <button className="btn-grad btn__add">Update Item</button>
                 </div>
               </div>
             </form>
@@ -168,7 +175,6 @@ const UpdateHostItem = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={props.close}>Cancel</Button>
-          <Button onClick={props.close}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>

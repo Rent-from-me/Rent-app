@@ -4,9 +4,10 @@
 }
 .new__item__con {
   display: flex;
+  justify-content: center;
   height: 60rem;
   width: 100%;
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 .new__item__left__box {
   background-image: url("https://bit.ly/3AOIOVn");
@@ -174,4 +175,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.btn__add {
+  height: 5.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

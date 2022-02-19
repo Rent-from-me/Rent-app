@@ -1,0 +1,11 @@
+.no-comment {
+    display: flex;
+    flex-direction: column;
+}
+.no-comment > div {
+    margin-bottom: 1rem;
+}
+
+.btn__now  {
+    background-color: black !important;
+}
