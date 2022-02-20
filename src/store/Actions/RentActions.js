@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+
 // Action Type
 export const DELTEDE_ITEM = "DELTEDE_ITEM";
 export const ADD_ITEM = "ADD_ITEM";
@@ -6,6 +6,8 @@ export const ADD_ITEM_RENT = "ADD_ITEM_RENT";
 export const RENT_ITEM = "RENT_ITEM";
 export const RATING = "RATING";
 export const UPDATE = "UPDATE";
+export const DELTEDE_ITEM_RENT = "DELTEDE_ITEM_RENT";
+
 
 //Action creator
 export const deleteItem = (id) => {
@@ -52,5 +54,13 @@ export const updateItem = (data,id) => {
     type: UPDATE,
     payload: data,
     id
+  };
+};
+
+
+export const deleteUser = (id) => {
+  return {
+    type: DELTEDE_ITEM_RENT,
+    id,
   };
 };

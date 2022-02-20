@@ -1,11 +1,14 @@
 import { init } from "../../DummyDate";
+
 import {
   ADD_ITEM,
   DELTEDE_ITEM,
   ADD_ITEM_RENT,
   RATING,
   UPDATE,
+  DELTEDE_ITEM_RENT,
 } from "../Actions/RentActions";
+
 
 export const RentReducer = (state = init, action) => {
   console.log(action.payload,action.id);
@@ -24,6 +27,26 @@ export const RentReducer = (state = init, action) => {
             },
           },
         ],
+      };
+    case UPDATE:
+      return {
+        ...state,
+        HostItem: state.HostItem.map((item) =>
+          item.id === action.id
+            ? {
+                ...item,
+                img: action.payload.img,
+                title: action.payload.title,
+                price: action.payload.price,
+                desc: action.payload.desc,
+              }
+            : item
+        ),
+      };
+    case DELTEDE_ITEM:
+      return {
+        ...state,
+        HostItem: state.HostItem.filter((item) => item.id !== action.id),
       };
     case ADD_ITEM_RENT:
       return {
@@ -51,25 +74,11 @@ export const RentReducer = (state = init, action) => {
             : item
         ),
       };
-    case UPDATE:
+
+    case DELTEDE_ITEM_RENT:
       return {
         ...state,
-        HostItem: state.HostItem.map((item) =>
-          item.id === action.id
-            ? {
-                ...item,
-                img: action.payload.img,
-                title: action.payload.title,
-                price: action.payload.price,
-                desc: action.payload.desc,
-              }
-            : item
-        ),
-      };
-    case DELTEDE_ITEM:
-      return {
-        ...state,
-        HostItem: state.HostItem.filter((item) => item.id !== action.id),
+        rentItem: state.rentItem.filter((item) => item.id !== action.id),
       };
     default:
       return state;

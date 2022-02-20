@@ -48,9 +48,9 @@ const Rating = (props) => {
   const data = useSelector((state) => state);
   console.log(data);
 
-  const item = data.HostItem.find((item) => (item.id === props.id ? item : null));
+  // const item = data.HostItem.find((item) => (item.id === props.id ? item : null));
 
-  console.log(item);
+  // console.log(item);
   const dispatch = useDispatch();
 
   const addRating = (e) => {

@@ -19,6 +19,8 @@ import Login from './component/Users/user/Login';
 import Register from './component/Users/user/Register';
 import ChatUser from './component/Users/user/ChatUser/ChatUser';
 import Loading from './component/layout/Loading';
+import { fetchItem } from './store/Actions/RentItemAction';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -49,8 +51,8 @@ function App() {
   //     if(localData  ) setAllData(localData);
   //   }
   // }
-
- 
+  
+  const dispath = useDispatch()
   return (
     <div className="App">
       {/* <Loading/> */}
@@ -78,7 +80,7 @@ function App() {
                 <Route path="/" element={<Home />} />
               </Routes>
             </section>
-
+       
           <Footer />
         </>
       )}

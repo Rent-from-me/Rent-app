@@ -9,9 +9,13 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 
 import "./UserRentItem.css"
+import { useDispatch } from "react-redux";
+import { deleteUser } from "../../../../store/Actions/RentActions";
+
+
 
 const UserRentItem = () => {
-  const rentItem = useSelector((state) => state.rentItem);
+  const rentItem = useSelector((state) => state.RentReducer.rentItem);
    const [open, setOpen] = useState(false);
 
    const handleClickOpen = () => {
@@ -21,6 +25,12 @@ const UserRentItem = () => {
    const handleClose = () => {
      setOpen(false);
    };
+   
+   const dispath = useDispatch()
+   
+   const cancel = (e) => {
+     dispath(deleteUser(e));
+   }
   return (
     <div className="main__box">
       <ProfileHeader />
@@ -59,7 +69,7 @@ const UserRentItem = () => {
                     >
                       Rate
                     </button>
-                    <button className="hostitem__control__btn hostitem__control__btn--delete">
+                    <button className="hostitem__control__btn hostitem__control__btn--delete" onClick={() => cancel(item.id)}>
                       cancel
                     </button>
                   </div>

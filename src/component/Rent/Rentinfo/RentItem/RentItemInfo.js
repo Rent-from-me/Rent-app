@@ -14,7 +14,7 @@ const RentItemInfo = (props) => {
 
   const params = useParams();
 
-  const rentItem = useSelector(state => state.HostItem)
+  const rentItem = useSelector(state => state.RentReducer.HostItem)
  
   const selectedItem = rentItem.find((selected) => selected.id === +params.id );
   

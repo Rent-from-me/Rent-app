@@ -10,7 +10,7 @@ import { Avatar, useSlider } from '@mui/material';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const profileImg = useSelector((state) => state.profile.img);
+  const profileImg = useSelector((state) => state.RentReducer.profile.img);
   
   return (
     <header className="header  d-flex align-items-center justify-content-between fs-4 shadow-sm mb-4">

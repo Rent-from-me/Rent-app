@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import {RentReducer} from './store/Reducers/RentReducer';
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import { RentReducer } from "./store/Reducers/RentReducer";
+import { FetchItemReducer } from "./store/Reducers/FetchItemReducer";
+import thunk from "redux-thunk";
 
-
-const store = createStore(RentReducer);
+const reducers = combineReducers({ RentReducer, FetchItemReducer });
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>

@@ -4,7 +4,7 @@ import './Profile.css'
 import { useSelector } from 'react-redux';
 
 const Profile = () => {
-  const user = useSelector((state) => state)
+  const user = useSelector((state) => state.RentReducer)
   
   const { name, img, location, dateJoined } = user.profile;
 
