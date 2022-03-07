@@ -1,0 +1,30 @@
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: red;
+  height: 100vh;
+}
+.author__con {
+  width: 50rem;
+  height: 46rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.author header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.author header img {
+    width: 15rem;
+}
+.author header h1 {
+  font-size: 3.5rem;
+  color: rgba(0, 0, 0, 0.73);
+}
+
+.logo__none {
+	display: none;
+}

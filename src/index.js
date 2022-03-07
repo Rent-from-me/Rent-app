@@ -11,8 +11,15 @@ import { Provider } from "react-redux";
 import { RentReducer } from "./store/Reducers/RentReducer";
 import { FetchItemReducer } from "./store/Reducers/FetchItemReducer";
 import thunk from "redux-thunk";
+import { LoginRenterReducer } from "./store/Reducers/UserAuthReducer";
 
-const reducers = combineReducers({ RentReducer, FetchItemReducer });
+
+const reducers = combineReducers({
+  RentReducer,
+  FetchItemReducer,
+  LoginRenterReducer,
+});
+
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(

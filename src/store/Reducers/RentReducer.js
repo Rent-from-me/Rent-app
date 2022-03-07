@@ -11,7 +11,6 @@ import {
 
 
 export const RentReducer = (state = init, action) => {
-  console.log(action.payload,action.id);
   switch (action.type) {
     case ADD_ITEM:
       return {
