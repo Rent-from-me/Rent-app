@@ -28,7 +28,7 @@ const Header = () => {
 
       <div className="header__right d-flex me-5 align-items-center justify-content-between">
         <h4 className="fs-4 me-3">
-          <NavLink to="Host/" className="link">
+          <NavLink to="/Host" className="link">
             Become a host
           </NavLink>
         </h4>

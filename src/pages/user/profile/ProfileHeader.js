@@ -15,11 +15,6 @@ const ProfileHeader = () => {
           Rentitems
         </Button>
       </NavLink>
-      <NavLink to="/ProfileChat" className="link">
-        <Button variant="outlined" className="fs-5 ">
-          Message
-        </Button>
-      </NavLink>
     </div>
   );
 };

@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { fetchItem } from "./store/Actions/RentItemAction";
 
-
-
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./component/layout/Footer";
@@ -16,44 +14,27 @@ import NewItem from "./pages/Host/NewItemHost/NewItem";
 import HostHome from "./pages/Host/HostHome/HostHome";
 import Profile from "./pages/user/profile/Profile";
 import UserRentItem from "./pages/user/UserRent/UserRentItem";
-import Auth from "./pages/Login/Auth";
+import Auth from "./pages/UserAuthForm/Auth";
 import Loading from "./component/layout/Loading";
-
-
-// import Auth from "./page/Users/user/Auth";
-
-// import Loading from "./page/layout/Loading";
-
-
+import AuthHost from "./pages/UserHostForm/AuthHost";
 
 function App() {
-  
-
-  
-  // useEffect(() => {
-  //   fetchretal()
-  // })
-  
-  // const fetchretal = () => {
-  //   dispatch(uu__u());
-  // }
-  
   const loginstate = useSelector((state) => state.LoginRenterReducer.login);
-  
+
   const [islogin, setIslogin] = useState(loginstate);
-  
+
   useEffect(() => {
     isLoginTrue();
-    
-  })
-  
+  });
+
   const isLoginTrue = () => {
-    let store = JSON.parse(localStorage.getItem("login"))
-    if(store && store.login) {
-      setIslogin(store.login)
+    let store = JSON.parse(localStorage.getItem("login"));
+    console.log(store);
+    if (store && store.login) {
+      setIslogin(store.login);
     }
-  }
-  
+  };
+
   return (
     <div className="App">
       {!islogin ? (
@@ -74,7 +55,7 @@ function App() {
               <Route path="/RentList" element={<RentList />} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/ProfileRentItem" element={<UserRentItem />} />
-              {/* <Route path="/ProfileChat" element={<ChatUser />} /> */}
+              <Route path="*" element={<AuthHost />} />
               <Route path="/RentItemInfo/:id" element={<RentItemInfo />} />
               <Route path="/Host" element={<HostHome />} />
               {/* <Route path="/Chat" element={<Chat />} /> */}

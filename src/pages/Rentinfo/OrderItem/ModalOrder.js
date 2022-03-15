@@ -9,7 +9,7 @@ import Slide from "@mui/material/Slide";
 import { useDispatch } from "react-redux";
 import { addItemRent } from "../../../store/Actions/RentActions";
 import "./ModalOrder.css";
-import { rentItem } from "../../../store/Actions/RentItemAction";
+import { rentItem } from "../../../store/Actions/UserAction";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

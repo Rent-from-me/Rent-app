@@ -1,16 +1,21 @@
 import axios from "axios";
+import axiosAuth, { BaseUrl } from "../../api/axiosAuth";
+
 
 export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 export const USER_LOGIN_FAIL = "USER_LOGIN_FAIL";
 export const USER_REGISTER = "USER_REGISTER";
 export const GET_USERS = "GET_USERS";
+export const FETCH_RENTITEM_START = "FETCH_RENTITEM_START";
+export const FETCH_RENTITEM_SUCCESS = "FETCH_RENTITEM_SUCCESS";
+export const FETCH_USERRENTITEM_SUCCESS = "FETCH_USERRENTITEM_SUCCESS";
+export const FETCH_RENTITEM_FAIL = "FETCH_MISSION_FAIL";
 
 
-const endPoint = "https://rentfromme.herokuapp.com/api";
 
 export const RegisterUser = (Register) => (dispatch) => {
   axios
-    .post(`${endPoint}/renters/register`, { ...Register })
+    .post(`${BaseUrl}/renters/register`, { ...Register })
     .then((res) => {
       dispatch({ type: USER_REGISTER, payload: res.data });
     })
@@ -20,7 +25,7 @@ export const RegisterUser = (Register) => (dispatch) => {
 
 export const LoginUser = (userLogin) => (dispatch) => {
   axios
-    .post(`${endPoint}/renters/login`, userLogin)
+    .post(`${BaseUrl}/renters/login`, userLogin)
     .then((res) => {
       localStorage.setItem(
         "login",
@@ -39,6 +44,40 @@ export const LoginUser = (userLogin) => (dispatch) => {
 };
 
 
+
+export const rentItem = (item) => (dispatch) => {
+  const token = JSON.parse(localStorage.getItem("login"));
+  axiosAuth()
+    .post(
+      `${BaseUrl}/rentals/rentItem`,
+      JSON.stringify(item),
+      { headers: { token: token.token } }
+    )
+    .then((res) => {
+      console.log(res);
+      // dispatch({ type: FETCH_RENTITEM_SUCCESS, payload: res.data });
+    })
+    .catch((error) =>
+      dispatch({ type: FETCH_RENTITEM_FAIL, payload: error.message })
+    );
+};
+
+export const userRentItem = () => (dispatch) => {
+  // dispatch({ type: FETCH_RENTITEM_START });
+  const token = JSON.parse(localStorage.getItem("login"));
+
+  axiosAuth()
+    .get(`${BaseUrl}/rentals/rentals`, {
+      headers: { token: token.token },
+    })
+    .then((res) => {
+      console.log(res);
+      dispatch({ type: FETCH_USERRENTITEM_SUCCESS, payload: res.data });
+    })
+    .catch((error) =>
+      dispatch({ type: FETCH_RENTITEM_FAIL, payload: error.message })
+    );
+};
 
 
 

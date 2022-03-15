@@ -23,7 +23,6 @@ const RentList = () => {
    },[dispatch])
    
    
-   console.log(items);
   return (
     <>
       <div className="rent-list ps-4">

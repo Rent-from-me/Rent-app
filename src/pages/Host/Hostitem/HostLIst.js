@@ -5,7 +5,7 @@ import HostItem from './HostItem';
 
 const HostLIst = () => {
   
-  const hostItems = useSelector(state => state.RentReducer.HostItem)
+  const hostItems = []
   console.log(hostItems);
   return (
     <div>

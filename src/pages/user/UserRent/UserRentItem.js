@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ProfileHeader from "../profile/ProfileHeader";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -8,42 +8,44 @@ import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 
-import "./UserRentItem.css"
+import "./UserRentItem.css";
 import { useDispatch } from "react-redux";
 import { deleteUser } from "../../../store/Actions/RentActions";
-
-
+import { userRentItem } from "../../../store/Actions/UserAction";
 
 const UserRentItem = () => {
-  const rentItem = useSelector((state) => state.FetchItemReducer.rentitem);
-   const [open, setOpen] = useState(false);
-    
-   const handleClickOpen = () => {
-     setOpen(true);
-   };
+  const rentItems = useSelector((state) => state.FetchItemReducer.userRent);
+  const [open, setOpen] = useState(false);
 
-   const handleClose = () => {
-     setOpen(false);
-   };
-   
-  //  const dispath = useDispatch()
-   
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+   const dispatch = useDispatch()
+
   //  const cancel = (e) => {
   //    dispath(deleteUser(e));
   //  }
-     useEffect(() => {
-       rentItem();
-     });
+  
+  useEffect(() => {
+    dispatch(userRentItem());
+  }, [dispatch]);
+
+  console.log("user rent", rentItems);
   return (
     <div className="main__box">
       <ProfileHeader />
-      {rentItem.length > 0 ? (
-        rentItem.map((item) => (
+      {rentItems.length > 0 ? (
+        rentItems.map((item) => (
           <div className="hostitem__con">
             <div className="hostitem">
               <div className="hostitem__box">
                 <img
-                  src={item.img.main}
+                  src={item.img_url}
                   alt="img"
                   className="hostitem__box--img"
                 />
@@ -53,17 +55,17 @@ const UserRentItem = () => {
                 <div className="hostitem__info__header">
                   <h1>{item.title}</h1>
                   <h3>
-                    ${item.price}/<span>day</span>
+                    ${item.daily_cost}/<span>day</span>
                   </h3>
                 </div>
                 <p className="hostitem__info--line">___________</p>
                 <div className="hostitem__info__detial">
-                  <p>{item.desc}</p>
+                  <p>{item.description}</p>
                 </div>
                 <div className="hostitem__control">
                   <p className="hostitem__control--star">
-                    <StarIcon className="hostitem__icon" />{" "}
-                    <span>{item.review}</span>
+                    <StarIcon className="hostitem__icon" />
+                     <span>3</span>
                   </p>
                   <div className="hostitem__control__btns">
                     <button
@@ -72,7 +74,7 @@ const UserRentItem = () => {
                     >
                       Rate
                     </button>
-                    <button className="hostitem__control__btn hostitem__control__btn--delete" >
+                    <button className="hostitem__control__btn hostitem__control__btn--delete">
                       cancel
                     </button>
                   </div>
@@ -109,6 +111,5 @@ const UserRentItem = () => {
 };
 
 export default UserRentItem;
-
 
 // https://medium.com/geekculture/22-sliding-form-for-website-3dd98b5e0ba6

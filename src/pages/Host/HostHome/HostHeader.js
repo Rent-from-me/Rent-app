@@ -16,11 +16,6 @@ const HostHeader = () => {
           Additem
         </Button>
       </NavLink>
-      <NavLink to="/Chat" className="link">
-        <Button variant="outlined" className="fs-5 ">
-          Message
-        </Button>
-      </NavLink>
     </div>
   );
 };

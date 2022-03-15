@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Login from "./Login";
+import React, { useEffect, useState } from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import Login from "./LoginHost";
 import logo from "../../asset/logo.png";
-import "./Auth.css";
-import Register from "./Register";
+import "../UserAuthForm/Auth.css";
+import RegisterHost from "./RegisterHost";
+import { useSelector } from "react-redux";
+import HostHome from "../Host/HostHome/HostHome";
 
 const Auth = (props) => {
   const [title, setTitle] = useState("Welcome Back");
-
+  
   const handleTitle = () => {
     setTitle("Create account");
   };
@@ -15,10 +17,6 @@ const Auth = (props) => {
     setTitle("Welcome Back");
   };
 
-  const logoDisplay = () => {
-    const image = document.querySelector("#logo");
-    image.classList("logo__none");
-  };
   return (
     <div className="author">
       <div className="author__con">
@@ -27,14 +25,11 @@ const Auth = (props) => {
           <h1>{title}</h1>
         </header>
         <section>
-         
           <Routes>
+            <Route path="*" element={<Login handleTitle={handleTitle} />} />
             <Route
-              path="/"
-              element={ <Login handleTitle={handleTitle} />} />
-            <Route
-              path="/Register"
-              element={<Register  handleTitle2={handleTitle2} />}
+              path="/RegisterHoster"
+              element={<RegisterHost handleTitle2={handleTitle2} />}
             />
           </Routes>
         </section>

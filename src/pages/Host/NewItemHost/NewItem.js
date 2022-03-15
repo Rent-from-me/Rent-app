@@ -8,66 +8,61 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../../store/Actions/RentActions";
+import { creatItem } from "../../../store/Actions/HostAction";
+import { AcUnit, MergeType, QrCode2 } from "@mui/icons-material";
 
 const NewItem = (props) => {
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
   const addNewItem = (e) => {
-    dispatch(addItem(e))
-  }
-  
-  const [imagesUpload, setImagesUpload] = useState([]);
-  const init = {
-    id: Date.now(),
-    img: {},
-    title: "",
-    location: "",
-    comments: [],
-    price: "",
-    review: 0,
-    date: Date.now(),
-    reviewer: 0,
-    desc: "",
-  };
-  const [newItem, setNewItem] = useState(init);
-  
-  const imageUploder = (e) => {
-    if (e.target.files) {
-      const fileArray = Array.from(e.target.files).map((file) =>
-        URL.createObjectURL(file)
-      );
-      setImagesUpload((preImage) => preImage.concat(fileArray));
-    }
-  
-    Array.from(e.target.files).map((file) => URL.revokeObjectURL(file));
+    dispatch(creatItem(e));
   };
 
-  const removeOne = (index) => {
-    const remove = imagesUpload.filter((image, i) => i !== index);
-    setImagesUpload(remove);
-  };
+  const [imageUpload, setImageUpload] = useState(null);
+  const store = JSON.parse(localStorage.getItem("owner"));
   
- 
-  const hadleChange = (event) => {
-    const addNew = {...newItem, [event.target.name]: event.target.value}
-    setNewItem(addNew)
-  } 
-    const img = {
-      main: imagesUpload[0],
-      sub1: imagesUpload[1],
-      sub2: imagesUpload[2],
-      sub3: imagesUpload[3],
-      sub4: imagesUpload[4],
+  const init = {
+    owner_id: null,
+    title: "",
+    description: "",
+    make: "",
+    model: "",
+    img_url: "",
+    daily_cost: null,
+    available: true,
+    condition: ""
+  };
+  init.owner_id = store.ownerId;
+  
+  const [newItem, setNewItem] = useState(init);
+
+  const imageUploader = (e) => {
+    const reader = new FileReader();
+    console.log(e.target.files);
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[e.target.files.length - 1]);
+    }
+
+    reader.onload = (readerEvent) => {
+      console.log(readerEvent);
+      setImageUpload(readerEvent.target.result);
     };
-    newItem.img = {...img}
- 
+  };
+
+  const hadleChange = (event) => {
+    const addNew = { ...newItem, [event.target.name]: event.target.value };
+    setNewItem(addNew);
+  };
+
+  newItem.img_url = imageUpload;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewItem(newItem);
+    setImageUpload(null);
     setNewItem(init);
-    setImagesUpload([])
-  }
-  
+  };
+
   console.log(newItem);
   return (
     <div className="new__item fs-4">
@@ -87,13 +82,24 @@ const NewItem = (props) => {
             </div>
 
             <div className="new__item__input">
-              <LocationOnOutlinedIcon className="icon" />
+              <QrCode2 className="icon" />
               <input
                 type="text"
-                name="location"
-                placeholder="Add Location"
+                name="make"
+                placeholder="Add make compony"
                 onChange={hadleChange}
-                value={newItem.location}
+                value={newItem.make}
+              />
+            </div>
+
+            <div className="new__item__input">
+              <MergeType className="icon" />
+              <input
+                type="text"
+                name="model"
+                placeholder="Add its model"
+                onChange={hadleChange}
+                value={newItem.model}
               />
             </div>
 
@@ -101,18 +107,29 @@ const NewItem = (props) => {
               <AttachMoneyIcon className="icon" />
               <input
                 type="number"
-                name="price"
+                name="daily_cost"
                 placeholder="Add price"
                 onChange={hadleChange}
-                value={newItem.price}
+                value={newItem.daily_cost}
+              />
+            </div>
+
+            <div className="new__item__input">
+              <AcUnit className="icon" />
+              <input
+                type="text"
+                name="condition"
+                placeholder="Add its condition"
+                onChange={hadleChange}
+                value={newItem.condition}
               />
             </div>
 
             <textarea
-              name="desc"
+              name="description"
               cols="70"
               rows="4"
-              value={newItem.desc}
+              value={newItem.description}
               placeholder="Add some description"
               onChange={hadleChange}
             ></textarea>
@@ -123,22 +140,17 @@ const NewItem = (props) => {
               type="file"
               id="file"
               className="file__upload"
-              onChange={imageUploder}
+              onChange={(e) => imageUploader(e)}
               multiple
             />
 
             <div className="upload__display">
               <div className="images__upload__con">
-                {imagesUpload &&
-                  imagesUpload.map((photo, index) => (
-                    <div
-                      className="images__upload"
-                      key={index}
-                      onClick={(e) => removeOne(index)}
-                    >
-                      <img src={photo} alt="uplood" key={index} />
-                    </div>
-                  ))}
+                {imageUpload && (
+                  <div className="images__upload">
+                    <img src={imageUpload} alt="uplood" />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -146,11 +158,9 @@ const NewItem = (props) => {
           <div className="form__bottom">
             <div className="button">
               <label htmlFor="file">
-                <div className="btn-grad">
-                  upload photo
-                </div>
+                <div className="btn-grad">upload photo</div>
               </label>
-                <button className="btn-grad py-4 btn__add">Add Item</button>
+              <button className="btn-grad py-4 btn__add">Add Item</button>
             </div>
           </div>
         </form>
