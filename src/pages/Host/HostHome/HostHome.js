@@ -6,19 +6,25 @@ import HostHeader from "./HostHeader";
 import "./HostHome.css";
 
 const HostHome = () => {
-  const owerLogin = useSelector((state) => state.LoginRenterReducer.owerLogin);
-  const [isloginOwner, setIsloginOwner] = useState(owerLogin);
-
+  const ownerLogin = useSelector(
+    (state) => state.OwnerLogRegReducer.ownerLogin
+  );
+  
+  const [isloginOwner, setIsloginOwner] = useState(ownerLogin);
+  
   useEffect(() => {
     isOwerTrue();
   });
 
   const isOwerTrue = () => {
     let store = JSON.parse(localStorage.getItem("owner"));
+    console.log(store);
     if (store && store.login) {
       setIsloginOwner(store.login);
     }
   };
+  
+  console.log(isloginOwner);
   
   return (
     <div>

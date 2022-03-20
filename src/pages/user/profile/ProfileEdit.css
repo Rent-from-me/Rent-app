@@ -1,0 +1,25 @@
+.upaderUser{
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upaderUser_input{
+    width: 80%;
+    padding: 5px 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid gray;
+    margin-top: 1rem;
+}
+
+.upaderUser_input:focus{
+    outline: none;
+}
+.updateUser_btn{
+    padding: 6px 2rem;
+    border-radius: 1rem;
+    border: none;
+    background: orange;
+    color: white;
+}

@@ -1,4 +1,5 @@
 import React, { forwardRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -6,10 +7,9 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-import { useDispatch } from "react-redux";
-import { addItemRent } from "../../../store/Actions/RentActions";
+import { rentNewItem } from "../../../store/Actions/userAction/UserAction";
+
 import "./ModalOrder.css";
-import { rentItem } from "../../../store/Actions/UserAction";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -20,12 +20,11 @@ const ModalOrder = (props) => {
  
   const dispatch = useDispatch();
 
-
-  
   const addRentItem = (e) => {
-    dispatch(rentItem(e));
+    dispatch(rentNewItem(e));
     props.Close();
   };
+  
 
   return (
     <div>

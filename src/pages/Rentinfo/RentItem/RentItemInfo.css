@@ -34,12 +34,27 @@
 .item__info-detail {
   width: 32rem;
 }
-
+.rentItem-content {
+  
+}
 .item__renter-data {
-  width: 65%;
+  width: 60%;
 }
 .item_renter-order {
    width: 30%;
+   margin-left: 3rem;
 }
 
+@media only screen and (max-width: 900px) {
+  .rentItem-content{
+    flex-direction: column;
+  }
+  .item__renter-data{
+    width: 100%;
+    
+  }
+  .item_renter-order{
+    width: 80%;
+  }
+}
 

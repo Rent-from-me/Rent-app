@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { RegisterUser } from "../../store/Actions/UserAction";
+import { userRegister } from "../../store/Actions/userAction/UserLogRegAction";
 import "./Register.css";
 
 const init = {
@@ -18,7 +18,7 @@ const Register = (props) => {
   const dispacth = useDispatch()
   
   const sign_Up = (e) => {
-    dispacth(RegisterUser(e));
+    dispacth(userRegister(e));
   }
   const handleTitle = () => {
     setTitle("Welcome back again!");
@@ -66,7 +66,10 @@ const Register = (props) => {
         onChange={handleChange}
       />
       <NavLink to="/">
-        <button className="create__account" onClick={props.handleTitle2}>
+        <button
+          className="create__account create__account_signup"
+          onClick={props.handleTitle2}
+        >
           Login now
         </button>
       </NavLink>

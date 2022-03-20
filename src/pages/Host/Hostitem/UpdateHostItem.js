@@ -14,7 +14,8 @@ import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { useDispatch, useSelector } from "react-redux";
-import { updateItem } from "../../../store/Actions/RentActions";
+import { updateItem } from "../../../store/Actions/ownerAction/OwnerAction";
+// import { updateItem } from "../../../store/Actions/RentActions";
 
 
 //form initial state
@@ -163,13 +164,10 @@ const UpdateHostItem = (props) => {
               <div className="form__bottom">
                 <div className="button">
                   <label htmlFor="file">
-                    <div className="btn-grad">
-                      upload photo
-                    </div>
+                    <div className="btn-grad">upload photo</div>
                   </label>
-
-                  <button className="btn-grad btn__add">Update Item</button>
                 </div>
+                <button className="btn-grad btn__add">Update Item</button>
               </div>
             </form>
           </div>

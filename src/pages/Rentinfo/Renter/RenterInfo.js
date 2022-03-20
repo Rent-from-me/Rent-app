@@ -5,8 +5,15 @@ import "./RenterInfo.css";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 const RenterInfo = (props) => {
-  const { owner_id,create_at,description, } =
-  props.selectedItem;
+  const {
+    owner_id,
+    create_at,
+    description,
+    model,
+    make,
+    condition,
+    daily_cost,
+  } = props.selectedItem;
 
   const fristFourItem = 4;
   // const [comment, setComment] = useState(comments.slice(0, fristFourItem));
@@ -15,21 +22,38 @@ const RenterInfo = (props) => {
     <>
       <section className="d-flex align-items-center mb-3 ">
         <div class="avatar-renter ">
-          <Avatar
-            alt="Remy Sharp"
-            src=""
-            sx={{ width: 56, height: 56 }}
-          />
+          <Avatar alt="Remy Sharp" src="" sx={{ width: 56, height: 56 }} />
         </div>
         <div>
           <h5 className="text-capitalize thrid-heading ms-3 fs-2">
-           owner name
+            owner name
           </h5>
           <h5 className="text-capitalize ms-3">{create_at}</h5>
         </div>
       </section>
       <section className="">
         <p className="fs-4 mb-5">{description}</p>
+        <h4 className="fs-2 py-3"> More information</h4>
+        <div className="item_moreinfo">
+          <table className="item_table">
+            <tr>
+              <th> Make</th>
+              <td>{make}</td>
+            </tr>
+            <tr>
+              <th> Model </th>
+              <td>{model}</td>
+            </tr>
+            <tr>
+              <th> Daily cost</th>
+              <td>${daily_cost}</td>
+            </tr>
+            <tr>
+              <th> Condition</th>
+              <td>{condition}</td>
+            </tr>
+          </table>
+        </div>
         <article>
           <h4 className="fs-2">⭐ 2 ･ 200 reviewer</h4>
           <div className="reviewer__con d-flex justify-content-between align-items-center flex-wrap my-5">

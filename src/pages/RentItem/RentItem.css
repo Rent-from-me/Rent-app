@@ -36,3 +36,23 @@
     margin-right: 0;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .rent__item {
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .rent__item {
+    width: 30rem;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .rent__item {
+    width: 26rem;
+    margin: 0 auto;
+  }
+}

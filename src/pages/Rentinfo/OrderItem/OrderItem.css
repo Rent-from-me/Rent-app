@@ -3,19 +3,39 @@
 }
 .check {
   border: 1px solid rgba(128, 128, 128, 0.685);
+  width: 50%;
 }
 
 .form_input {
-   width: 13.8rem;
+   width: 100%;
    border: none;
 }
 .form_btn {
   width: 100%;
   border: none;
-  background-color: orange;
+  background-color: 	#FF8C00;
   color: white;
 }
 
 .total {
   color: rgba(0, 0, 0, 0.676);
+}
+
+@media only screen and (max-width: 1245px) {
+  .form{
+    width: 50rem;
+    margin-left: 3rem;
+  }
+  .check{
+    width: 100%;
+  }
+  .form_input {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .form{
+    width: 50rem;
+    margin-left: 5rem;
+  }
 }

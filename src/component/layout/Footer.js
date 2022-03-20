@@ -4,8 +4,8 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="p-4 border-top">
-      <div class="cards">
-        <div class="cards__item">
+      <div className="cards">
+        <div className="cards__item">
           <div>
             <h3>Renter</h3>
             <a href="#">Home</a>
@@ -13,7 +13,7 @@ const Footer = () => {
             <a href="#">Profile</a>
           </div>
         </div>
-        <div class="cards__item">
+        <div className="cards__item">
           <div>
             <h3>About Us</h3>
             <a href="#">Aim</a>
@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="#">Testimonials</a>
           </div>
         </div>
-        <div class="cards__item">
+        <div className="cards__item">
           <div>
             <h3>Contact us</h3>
             <a href="#">rent@gmail.com</a>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="cards__item">
+        <div className="cards__item">
           <div>
             <h3>Help</h3>
             <a href="#">Help@gmail.com</a>
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p class="text-center border-top pt-2">Copyright &copy; Renter.com</p>
+      <p className="text-center border-top pt-2">Copyright &copy; Renter.com</p>
     </footer>
   );
 };

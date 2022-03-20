@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { LoginUser, users } from "../../store/Actions/UserAction";
+import { userLogin } from "../../store/Actions/userAction/UserLogRegAction";
+import logo from "../../asset/logo.png";
+
 import "./Login.css";
-import Register from "./Register";
 
 const Login = (props) => {
   const dispacth = useDispatch();
 
   const login_User = (e) => {
-    dispacth(LoginUser(e));
+    dispacth(userLogin(e));
   };
 
   
@@ -33,33 +34,36 @@ const Login = (props) => {
   
   
   return (
-    <form class="sign__in" onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        autoComplete="off"
-        name="email"
+    <div className="login_con">
+      <img src={logo} alt="logo" className="Login_logo"/>
+      <form className="sign__in" onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          autoComplete="off"
+          name="email"
         value={signIn.email}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        placeholder="Enter your password"
-        autoComplete="off"
-        password="password"
-        name="password"
-        value={signIn.password}
-        onChange={handleChange}
-      />
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          autoComplete="off"
+          password="password"
+          name="password"
+          value={signIn.password}
+          onChange={handleChange}
+        />
 
-      <NavLink to="/Register">
-        <button className="create__account" onClick={props.handleTitle}>
-          create account
-        </button>
-      </NavLink>
+        <NavLink to="/Register">
+          <button className="create__account" onClick={props.handleTitle}>
+            create account
+          </button>
+        </NavLink>
 
-      <button className="sign__in--btn">Sign in</button>
-    </form>
+        <button className="sign__in--btn" >Sign in</button>
+      </form>
+    </div>
   );
 };
 

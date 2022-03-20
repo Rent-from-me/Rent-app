@@ -10,11 +10,34 @@ import { Button } from "@mui/material";
 
 import "./UserRentItem.css";
 import { useDispatch } from "react-redux";
-import { deleteUser } from "../../../store/Actions/RentActions";
-import { userRentItem } from "../../../store/Actions/UserAction";
+import {
+  deleteRental,
+  updateRental,
+} from "../../../store/Actions/userAction/UserAction";
 
+//update
 const UserRentItem = () => {
-  const rentItems = useSelector((state) => state.FetchItemReducer.userRent);
+  const dispatch = useDispatch();
+
+  // const rentalDelchecker = useSelector(
+  //   (state) => state.UserReducer.rentalDelete
+  // );
+
+  
+    const cancel = (e) => {
+      console.log("run delete");
+      dispatch(deleteRental(e));
+    };
+
+
+  const rentItems = useSelector((state) => state.UserReducer.userRental);
+
+  const store = JSON.parse(localStorage.getItem("login"));
+
+  const userRentItems = rentItems.filter(
+    (item) => item.renter_id === store.userId
+  );
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -25,31 +48,16 @@ const UserRentItem = () => {
     setOpen(false);
   };
 
-   const dispatch = useDispatch()
 
-  //  const cancel = (e) => {
-  //    dispath(deleteUser(e));
-  //  }
-  
-  useEffect(() => {
-    dispatch(userRentItem());
-  }, [dispatch]);
+  console.log(userRentItems);
 
-  console.log("user rent", rentItems);
   return (
     <div className="main__box">
       <ProfileHeader />
-      {rentItems.length > 0 ? (
-        rentItems.map((item) => (
-          <div className="hostitem__con">
+      {userRentItems.length > 0 ? (
+        userRentItems.map((item) => (
+          <div className="hostitem__con" key={item.id}>
             <div className="hostitem">
-              <div className="hostitem__box">
-                <img
-                  src={item.img_url}
-                  alt="img"
-                  className="hostitem__box--img"
-                />
-              </div>
               <div className="hostitem__center"></div>
               <div className="hostitem__info">
                 <div className="hostitem__info__header">
@@ -65,7 +73,7 @@ const UserRentItem = () => {
                 <div className="hostitem__control">
                   <p className="hostitem__control--star">
                     <StarIcon className="hostitem__icon" />
-                     <span>3</span>
+                    <span>3</span>
                   </p>
                   <div className="hostitem__control__btns">
                     <button
@@ -74,8 +82,11 @@ const UserRentItem = () => {
                     >
                       Rate
                     </button>
-                    <button className="hostitem__control__btn hostitem__control__btn--delete">
-                      cancel
+                    <button
+                      className="hostitem__control__btn hostitem__control__btn--delete"
+                      onClick={() => cancel(item.id)}
+                    >
+                      Cancel
                     </button>
                   </div>
                 </div>
@@ -100,7 +111,7 @@ const UserRentItem = () => {
             wali wax alaaba ah maad kiraysan
           </div>
           <NavLink to="/RentList" className="link">
-            <Button className="btn__now fs-4 mt-2 " variant="contained" l>
+            <Button className="btn__now fs-4 mt-2 " variant="contained">
               Rent Now
             </Button>
           </NavLink>

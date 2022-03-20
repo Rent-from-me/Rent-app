@@ -2,11 +2,11 @@
   width: 95%;
   margin: 4rem auto;
   display: flex;
-  height: 40rem; /*testing*/
+  height: 40rem; 
 }
 .rent__now__info {
   width: 25rem;
-  height: 100%;
+  height: auto;
   margin-top: 3rem;
 }
 
@@ -45,4 +45,17 @@
   top: 8%;
   right: -5rem;
   transform: rotate(20deg);
+}
+
+@media only screen and (max-width: 900px) {
+  .rent__now{
+    flex-direction: column;
+     height: 55rem; 
+  }
+  .rent__now__images{
+    margin-left: 0rem;
+  }
+  .image-3 {
+    right: 1rem;
+  }
 }

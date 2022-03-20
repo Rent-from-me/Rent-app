@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { fetchItem } from "./store/Actions/RentItemAction";
-
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./component/layout/Footer";
@@ -17,24 +14,46 @@ import UserRentItem from "./pages/user/UserRent/UserRentItem";
 import Auth from "./pages/UserAuthForm/Auth";
 import Loading from "./component/layout/Loading";
 import AuthHost from "./pages/UserHostForm/AuthHost";
+import { FechRentList } from "./store/Actions/rentListAction/RentListAction";
+import { Rentals } from "./store/Actions/userAction/UserAction";
+
 
 function App() {
-  const loginstate = useSelector((state) => state.LoginRenterReducer.login);
+  const loginstate = useSelector((state) => state.UserLogRegReducer.login);
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(FechRentList());
+  }, [dispatch]);
+  
+  const rentalItemchecker = useSelector(
+    (state) => state.UserReducer.userRentItem
+  );
+
+  useEffect(() => {
+    dispatch(Rentals());
+  }, [rentalItemchecker]);
 
   const [islogin, setIslogin] = useState(loginstate);
 
   useEffect(() => {
+    console.log("run");
     isLoginTrue();
   });
 
   const isLoginTrue = () => {
     let store = JSON.parse(localStorage.getItem("login"));
-    console.log(store);
     if (store && store.login) {
       setIslogin(store.login);
     }
   };
-
+  
+   const Logout = () => {
+     localStorage.removeItem("login");
+      setIslogin(false);
+   };
+   
   return (
     <div className="App">
       {!islogin ? (
@@ -46,14 +65,14 @@ function App() {
       ) : (
         <>
           <Header>
-            <Header />
+            <Header logout={Logout} />
           </Header>
 
           <section className="main__section">
             <Routes>
               <Route path="/New" element={<NewItem />} />
               <Route path="/RentList" element={<RentList />} />
-              <Route path="/Profile" element={<Profile />} />
+              <Route path="/Profile" element={<Profile logout={Logout} />} />
               <Route path="/ProfileRentItem" element={<UserRentItem />} />
               <Route path="*" element={<AuthHost />} />
               <Route path="/RentItemInfo/:id" element={<RentItemInfo />} />

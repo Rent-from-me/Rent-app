@@ -7,22 +7,34 @@ import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../../store/Actions/RentActions";
-import { creatItem } from "../../../store/Actions/HostAction";
+// import { addItem } from "../../../store/Actions/RentActions";
+// import { creatItem } from "../../../store/Actions/HostAction";
+import {creatNewItem } from "../../../store/Actions/ownerAction/OwnerAction"
 import { AcUnit, MergeType, QrCode2 } from "@mui/icons-material";
-
+// Upload Files with Fetch - JavaScript Tutorial
 const NewItem = (props) => {
   const dispatch = useDispatch();
 
   const addNewItem = (e) => {
-    dispatch(creatItem(e));
+    dispatch(creatNewItem(e));
   };
 
   const [imageUpload, setImageUpload] = useState(null);
   const store = JSON.parse(localStorage.getItem("owner"));
-  
+
+  // const init = {
+  //   owner_id: null,
+  //   title: "",
+  //   description: "",
+  //   make: "",
+  //   model: "",
+  //   img_url: "",
+  //   daily_cost: null,
+  //   available: true,
+  //   condition: ""
+  // };
   const init = {
-    owner_id: null,
+    owner_id: 0,
     title: "",
     description: "",
     make: "",
@@ -30,10 +42,11 @@ const NewItem = (props) => {
     img_url: "",
     daily_cost: null,
     available: true,
-    condition: ""
+    condition: "",
   };
-  init.owner_id = store.ownerId;
   
+  init.owner_id = store.ownerId;
+  console.log(init);
   const [newItem, setNewItem] = useState(init);
 
   const imageUploader = (e) => {
@@ -75,9 +88,9 @@ const NewItem = (props) => {
               <input
                 type="text"
                 placeholder="Add title"
-                onChange={hadleChange}
-                value={newItem.title}
                 name="title"
+                value={newItem.title}
+                onChange={hadleChange}
               />
             </div>
 
@@ -87,8 +100,8 @@ const NewItem = (props) => {
                 type="text"
                 name="make"
                 placeholder="Add make compony"
-                onChange={hadleChange}
                 value={newItem.make}
+                onChange={hadleChange}
               />
             </div>
 
@@ -98,8 +111,8 @@ const NewItem = (props) => {
                 type="text"
                 name="model"
                 placeholder="Add its model"
-                onChange={hadleChange}
                 value={newItem.model}
+                onChange={hadleChange}
               />
             </div>
 
@@ -109,8 +122,8 @@ const NewItem = (props) => {
                 type="number"
                 name="daily_cost"
                 placeholder="Add price"
-                onChange={hadleChange}
                 value={newItem.daily_cost}
+                onChange={hadleChange}
               />
             </div>
 
@@ -120,8 +133,8 @@ const NewItem = (props) => {
                 type="text"
                 name="condition"
                 placeholder="Add its condition"
-                onChange={hadleChange}
                 value={newItem.condition}
+                onChange={hadleChange}
               />
             </div>
 

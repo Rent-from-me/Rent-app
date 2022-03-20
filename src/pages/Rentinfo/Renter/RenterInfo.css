@@ -1,6 +1,7 @@
 .reviewer__con{
    width: 100%;
 }
+ 
 .no-comment {
    width: 100%;
    height: 20rem;
@@ -14,4 +15,14 @@
 .icon-warn{
    transform: translateY(-.2rem);
    color: red;
+}
+
+.item_table {
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.item_table th, .item_table td {
+  padding:1rem 1rem;
+  /* background-color: #f1f1f1; */
+  margin-bottom: 1rem;
 }

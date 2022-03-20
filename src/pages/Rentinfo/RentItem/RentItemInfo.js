@@ -14,14 +14,14 @@ const RentItemInfo = (props) => {
 
   const params = useParams();
   console.log(params);
-  const rentItem = useSelector((state) => state.FetchItemReducer.rentitem);
+  const rentItem = useSelector((state) => state.FetchRentListReducer.rentitem);
   
   
   const selectedItem = rentItem.find((selected) => selected.id === +params.id );
   
   const { id, title, img_url, description ,make} = selectedItem;
   
-
+// GET OWNER NAME 
   
   return (
     <div className="item__info">
@@ -66,7 +66,7 @@ const RentItemInfo = (props) => {
         </Grid> */}
       </Box>
 
-      <Box className="d-flex align-items-center">
+      <Box className="d-flex align-items-center rentItem-content">
         <section className="my-5 item__renter-data ">
           <RenterInfo selectedItem={selectedItem} />
         </section>

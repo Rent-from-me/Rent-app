@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { RegisterHoster } from "../../store/Actions/HostAction";
+import { ownerRegister } from "../../store/Actions/ownerAction/OwnerLogRegAction";
 import "../UserAuthForm/Register.css";
 
 const init = {
@@ -18,7 +18,7 @@ const Register = (props) => {
   const dispacth = useDispatch()
   
   const sign_Up = (e) => {
-    dispacth(RegisterHoster(e));
+    dispacth(ownerRegister(e));
   }
   const handleTitle = () => {
     setTitle("Welcome back again!");

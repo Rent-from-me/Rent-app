@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ModalOrder from "./ModalOrder";
 import "./OrderItem.css";
 
-const dateReader = (date) => {
+export const dateReader = (date) => {
   const year = date.getFullYear().toString();
   const day = date.getDate().toString();
   const month = date.getMonth();
@@ -12,7 +12,7 @@ const dateReader = (date) => {
 };
 
 const OrderItem = (props) => {
-  const { daily_cost, owner_id,id } = props.data;
+  const { daily_cost, owner_id, id } = props.data;
 
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
@@ -36,13 +36,11 @@ const OrderItem = (props) => {
     setCheckin(checkTime);
   };
 
-
-
   const checkOut = (event) => {
     const check = new Date(event.target.value);
     const checkTime = check.getTime();
     setCheckout(checkTime);
-    setEnd(dateReader(check))
+    setEnd(dateReader(check));
   };
   const checkLocation = (event) => {
     setLocation(event.target.value);
@@ -64,8 +62,8 @@ const OrderItem = (props) => {
     tool_id: owner_id,
     renter_id: store.userId,
   };
-  
-    console.log(data);
+
+  console.log(data);
   return (
     <form className="fs-4 " onSubmit={handleClickOpen}>
       <h5 className="thrid-heading pt-4 mt-3 ">
@@ -117,7 +115,7 @@ const OrderItem = (props) => {
         <ModalOrder
           Open={handleClickOpen}
           Close={handleClose}
-          days = {InDays}
+          days={InDays}
           data={props.data}
           item={data}
         />
