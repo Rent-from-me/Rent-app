@@ -54,3 +54,10 @@
     top: -10rem;
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .author {
+    height: 70vh;
+  }
+}

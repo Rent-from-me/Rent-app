@@ -18,7 +18,7 @@ const Auth = (props) => {
   };
 
   return (
-    <div className="author">
+    <div className="author ">
       <div className="author__con">
         <header>
           {/* <img src={logo} alt="logo" id="logo"/> */}

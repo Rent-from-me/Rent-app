@@ -41,14 +41,12 @@ const ProfileEdit = (props) => {
 
   return (
     <div className="edite-box ">
-      <Box sx={{ width: "100rem" }}>
         <Dialog
           open={props.state}
           onClose={props.close}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
           className="fs-3"
-          sx={{ width: "100%" }}
         >
           <DialogTitle id="alert-dialog-title " className="fs-1 fw-bold">
             Update your profile
@@ -106,7 +104,6 @@ const ProfileEdit = (props) => {
             </DialogContentText>
           </DialogContent>
         </Dialog>
-      </Box>
     </div>
   );
 };

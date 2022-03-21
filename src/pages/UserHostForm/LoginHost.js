@@ -35,7 +35,7 @@ const Login = (props) => {
   //  console.log(owerLogin);
   
   return (
-    <div className="login_con">
+    <div className="login_con ">
       <img src={logo} alt="logo" className="Login_logo" />
       <form class="sign__in" onSubmit={handleSubmit}>
         <input
