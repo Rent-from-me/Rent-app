@@ -15,6 +15,7 @@ const token = JSON.parse(localStorage.getItem("owner"));
 
 //OWNER CREATE NEW ITEM
 export const creatNewItem = (item) => (dispatch) => {
+  const token = JSON.parse(localStorage.getItem("owner"));
   axiosAuth()
     .post(`${BaseUrl}/items/create`, JSON.stringify(item), {
       headers: { token: token.token },
@@ -31,6 +32,7 @@ export const creatNewItem = (item) => (dispatch) => {
 //OWNER FFECHT ITEMS CREATE
 export const ownerItemFetch = () => (dispatch) => {
   // dispatch({ type: OWNER_FETCH_START });
+  const token = JSON.parse(localStorage.getItem("owner"));
   axiosAuth()
     .get(`${BaseUrl}/items`, 
     {headers: { token: token.token }}
@@ -45,6 +47,7 @@ export const ownerItemFetch = () => (dispatch) => {
 
 //OWNER UPDATE ITEM
 export const updateItem = (id,data) => (dispatch) => {
+  const token = JSON.parse(localStorage.getItem("owner"));
   console.log(data);
   axiosAuth()
     .put(`${BaseUrl}/items/${id}`,JSON.stringify(data) ,{
@@ -60,7 +63,7 @@ export const updateItem = (id,data) => (dispatch) => {
 
 //OWNER DELETE ITIME 
 export const deleteItem = (id) => (dispatch) => {
-  console.log(id)
+  const token = JSON.parse(localStorage.getItem("owner"));
   axiosAuth()
     .delete(`${BaseUrl}/item/${id}`, {
       headers: { token: token.token },

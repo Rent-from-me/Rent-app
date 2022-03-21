@@ -1,34 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ownerLogin } from "../../../store/Actions/ownerAction/OwnerLogRegAction";
 import AuthHost from "../../UserHostForm/AuthHost";
 import HostLIst from "../Hostitem/HostLIst";
 import HostHeader from "./HostHeader";
 import "./HostHome.css";
 
-const HostHome = () => {
-  const ownerLogin = useSelector(
-    (state) => state.OwnerLogRegReducer.ownerLogin
-  );
-  
-  const [isloginOwner, setIsloginOwner] = useState(ownerLogin);
-  
-  useEffect(() => {
-    isOwerTrue();
-  });
-
-  const isOwerTrue = () => {
-    let store = JSON.parse(localStorage.getItem("owner"));
-    console.log(store);
-    if (store && store.login) {
-      setIsloginOwner(store.login);
-    }
-  };
-  
-  console.log(isloginOwner);
-  
+const HostHome = (props) => {
+  console.log(props);
   return (
     <div>
-      {!isloginOwner ? (
+      {!props.isloginOwner ? (
         <AuthHost />
       ) : (
         <div className="host-home  ">

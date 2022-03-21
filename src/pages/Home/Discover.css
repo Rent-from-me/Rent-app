@@ -1,5 +1,6 @@
 .discover {
-  margin: 5rem auto;
+  margin: 0rem auto;
+  margin-top: 5rem;
 }
 .discover > h1 {
 font-size: 4rem;
@@ -56,13 +57,29 @@ font-size: 4rem;
 
 @media only screen and (max-width: 900px) {
   .composition{
+    width: 100%;
     flex-direction: column;
+    height: 80rem;
   }
   .composition__left{
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
   .composition__right{
     width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .composition__left , .composition__right {
+    border-radius: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .composition__left--info {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  .composition__left , .composition__right {
+    border-radius: 0;
   }
 }

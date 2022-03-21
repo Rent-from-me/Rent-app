@@ -11,11 +11,11 @@ import { useSelector } from "react-redux";
 
 const Header = (props) => {
   const [open, setOpen] = useState(false)
-  
+console.log(props);
   const handleClickOpen = () => {
     setOpen(!open);
   };
-  
+  console.log(props.children.props.titleHost);
   return (
     <header className="header fs-4 shadow-sm mb-4">
       <div className="header_box">
@@ -32,19 +32,21 @@ const Header = (props) => {
           <SearchIcon className="fs-1" />
         </div>
       </div>
-      
+
       <div className="header_content">
         <div className="header__right d-flex align-items-center justify-content-between">
           <h4 className="fs-4 me-3">
             <NavLink to="/Host" className="link">
-              Become a host
+              {props.children.props.titleHost}
             </NavLink>
           </h4>
           <LanguageIcon className="fs-1  me-2" />
           <ExpandMoreIcon className="fs-1 me-2" onClick={handleClickOpen} />
           {open && (
             <selection>
-              <option value onClick={props.children.props.logout}>Logout</option>
+              <option value onClick={props.children.props.logout}>
+                Logout
+              </option>
             </selection>
             // <div className="logout_com shadow-lg">
             //   <h4 >Log out</h4>

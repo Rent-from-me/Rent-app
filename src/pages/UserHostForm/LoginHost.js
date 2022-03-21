@@ -31,8 +31,6 @@ const Login = (props) => {
     login_User(signIn);
   };
   
-  //  const owerLogin = useSelector((state) => state.LoginRenterReducer.owerLogin);
-  //  console.log(owerLogin);
   
   return (
     <div className="login_con ">

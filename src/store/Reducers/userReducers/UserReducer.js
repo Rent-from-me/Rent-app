@@ -40,7 +40,7 @@ export const UserReducer = (state = init, action) => {
       return {
         ...state,
         rentalDelete: true,
-      };
+      };  
     case USER_DELETERENTAL_FAIL:
       return {};
     case USER_UPDATERENTAL_SUCCESS:

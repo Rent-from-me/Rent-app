@@ -15,17 +15,24 @@ import {
   Rentals,
   updateRental,
 } from "../../../store/Actions/userAction/UserAction";
+import { FechRentList } from "../../../store/Actions/rentListAction/RentListAction";
 
 //update
 const UserRentItem = () => {
   const dispatch = useDispatch();
-   const rentalItemchecker = useSelector(
-     (state) => state.UserReducer.userRentItem
-   );
+  const rentalItemchecker = useSelector(
+    (state) => state.UserReducer.userRentItem
+  );
+  useEffect(() => {
+    dispatch(FechRentList());
+  }, [dispatch]);
 
-   useEffect(() => {
-     dispatch(Rentals());
-   }, [rentalItemchecker]);
+  const items = useSelector((state) => state.FetchRentListReducer.rentitem);
+  console.log("fech list", items);
+
+  useEffect(() => {
+    dispatch(Rentals());
+  }, [rentalItemchecker]);
   // const rentalDelchecker = useSelector(
   //   (state) => state.UserReducer.rentalDelete
   // );
@@ -42,7 +49,20 @@ const UserRentItem = () => {
   const userRentItems = rentItems.filter(
     (item) => item.renter_id === store.userId
   );
+  const userRent = [];
 
+  for (let i = 0; i < userRentItems.length; i++) {
+    const rental = userRentItems[i];
+    console.log("r", rental.owner_id);
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      item.owner_id === rental.owner_id &&
+        item.title === rental.title &&
+        userRent.push(item);
+    }
+  }
+
+  console.log("rent item", userRent);
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -52,15 +72,21 @@ const UserRentItem = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-
+  
   return (
     <div className="main__box">
       <ProfileHeader />
       {userRentItems.length > 0 ? (
-        userRentItems.map((item) => (
-          <div className="hostitem__con" key={item.id}>
+        userRent.map((item) => (
+          <div className="hostitem__con">
             <div className="hostitem">
+              <div className="hostitem__box">
+                <img
+                  src={item.img_url}
+                  alt="img"
+                  className="hostitem__box--img"
+                />
+              </div>
               <div className="hostitem__center"></div>
               <div className="hostitem__info">
                 <div className="hostitem__info__header">
@@ -71,12 +97,12 @@ const UserRentItem = () => {
                 </div>
                 <p className="hostitem__info--line">___________</p>
                 <div className="hostitem__info__detial">
-                  <p>{item.description}</p>
+                  <p>{`${item.description.slice(0, 200).concat("...")}`}</p>
                 </div>
                 <div className="hostitem__control">
                   <p className="hostitem__control--star">
-                    <StarIcon className="hostitem__icon" />
-                    <span>3</span>
+                    <StarIcon className="hostitem__icon" />{" "}
+                    <span>{item.make}</span>
                   </p>
                   <div className="hostitem__control__btns">
                     <button
@@ -89,22 +115,22 @@ const UserRentItem = () => {
                       className="hostitem__control__btn hostitem__control__btn--delete"
                       onClick={() => cancel(item.id)}
                     >
-                      Cancel
+                      Delete
                     </button>
                   </div>
                 </div>
               </div>
-
               <div className="hostitem__center"></div>
+              //{" "}
+              {open && (
+                <Rating
+                  {...item}
+                  open={handleClickOpen}
+                  close={handleClose}
+                  state={open}
+                />
+              )}
             </div>
-            {open && (
-              <Rating
-                {...item}
-                open={handleClickOpen}
-                close={handleClose}
-                state={open}
-              />
-            )}
           </div>
         ))
       ) : (

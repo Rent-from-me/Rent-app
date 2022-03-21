@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 114rem;
+  width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 0px;
@@ -25,6 +25,7 @@
 
 .hostitem__center {
   width: 3rem;
+    border-color: red;
 }
 
 .hostitem__box {
@@ -44,7 +45,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background: white;
 }
 
 .hostitem__info--line {
@@ -96,4 +96,33 @@
 }
 .hostitem__control__btn--delete{
     background-color: rgba(255, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+  .hostitem {
+    width: 70%;
+    flex-direction: column;
+    height: 40rem;
+    margin-bottom: 1rem;
+  } 
+  .hostitem__box {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .hostitem__control {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+    .hostitem {
+    width: 80%;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 1rem;
+  } 
+  .hostitem__info{
+    width: 30rem;
+     overflow-wrap: break-word;
+  }
 }

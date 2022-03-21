@@ -8,7 +8,8 @@ import { deleteItem } from "../../../store/Actions/ownerAction/OwnerAction";
 
 const HostItem = ({ id, title, img_url, daily_cost, make, description }) => {
   const dispatch = useDispatch();
-  
+  const desc = description.slice(0, 200).concat('...');
+
   const removeItem = (e) => {
     dispatch(deleteItem(e));
   };
@@ -38,7 +39,7 @@ const HostItem = ({ id, title, img_url, daily_cost, make, description }) => {
           </div>
           <p className="hostitem__info--line">___________</p>
           <div className="hostitem__info__detial">
-            <p>{description}</p>
+            <p>{`${desc}...`}</p>
           </div>
           <div className="hostitem__control">
             <p className="hostitem__control--star">

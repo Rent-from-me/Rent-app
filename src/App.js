@@ -33,12 +33,37 @@ function App() {
       setIslogin(store.login);
     }
   };
+  
+  const ownerLogin = useSelector(
+    (state) => state.OwnerLogRegReducer.ownerLogin
+  );
+  
+  const [isloginOwner, setIsloginOwner] = useState(ownerLogin);
+  const [titleHostHeader, settTitleHostHeader] = useState("Become a host");
+  
+  useEffect(() => {
+    isOwerTrue();
+  });
+
+  const isOwerTrue = () => {
+    let store = JSON.parse(localStorage.getItem("owner"));
+    console.log(store);
+    if (store && store.login) {
+      setIsloginOwner(store.login);
+      settTitleHostHeader("Switch to hosting")
+    }
+  };
+  console.log(isloginOwner);
+  
+  console.log(titleHostHeader);
+  
 
   const Logout = () => {
     localStorage.removeItem("login");
     setIslogin(false);
   };
 
+  
   return (
     <div className="App">
       {!islogin ? (
@@ -50,7 +75,7 @@ function App() {
       ) : (
         <>
           <Header>
-            <Header logout={Logout} />
+            <Header logout={Logout} titleHost={titleHostHeader} />
           </Header>
 
           <section className="main__section">
@@ -61,7 +86,10 @@ function App() {
               <Route path="/ProfileRentItem" element={<UserRentItem />} />
               <Route path="*" element={<AuthHost />} />
               <Route path="/RentItemInfo/:id" element={<RentItemInfo />} />
-              <Route path="/Host" element={<HostHome />} />
+              <Route
+                path="/Host"
+                element={<HostHome isloginOwner={isloginOwner} />}
+              />
               {/* <Route path="/Chat" element={<Chat />} /> */}
 
               <Route path="/" element={<Home />} />

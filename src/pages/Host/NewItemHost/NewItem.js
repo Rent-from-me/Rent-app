@@ -67,7 +67,7 @@ const NewItem = (props) => {
     setNewItem(addNew);
   };
 
-  newItem.img_url = imageUpload;
+  newItem.img_url = "https://bit.ly/3tp4NA4";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -139,6 +139,7 @@ const NewItem = (props) => {
             </div>
 
             <textarea
+              className="new__item_textarea"
               name="description"
               cols="70"
               rows="4"
@@ -171,9 +172,9 @@ const NewItem = (props) => {
           <div className="form__bottom">
             <div className="button">
               <label htmlFor="file">
-                <div className="btn-grad">upload photo</div>
+                <div className="btn-grad text-capitalize">upload photo</div>
               </label>
-              <button className="btn-grad py-4 btn__add">Add Item</button>
+              <button className="btn-grad text-capitalize">Add Item</button>
             </div>
           </div>
         </form>

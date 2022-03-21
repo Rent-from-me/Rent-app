@@ -3,6 +3,7 @@ import "./RentItem.css";
 
 
 const RentItem = ({ img_url, title, daily_cost, created_at }) => {
+  
   return (
     <div className="rent__item me-4 mb-4 rounded">
       <img src={img_url} className="rent__item-img rounded" alt="IMG" />
