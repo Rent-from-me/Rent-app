@@ -25,22 +25,18 @@ const UserRentItem = () => {
   );
   useEffect(() => {
     dispatch(FechRentList());
-  }, [dispatch]);
+  });
 
   const items = useSelector((state) => state.FetchRentListReducer.rentitem);
-  console.log("fech list", items);
 
   useEffect(() => {
     dispatch(Rentals());
-  }, [rentalItemchecker]);
-  // const rentalDelchecker = useSelector(
-  //   (state) => state.UserReducer.rentalDelete
-  // );
-
-  const cancel = (e) => {
-    console.log("run delete");
-    dispatch(deleteRental(e));
-  };
+  });
+  
+  const rentalDelchecker = useSelector(
+    (state) => state.UserReducer.rentalDelete
+  );
+   
 
   const rentItems = useSelector((state) => state.UserReducer.userRental);
 
@@ -53,16 +49,16 @@ const UserRentItem = () => {
 
   for (let i = 0; i < userRentItems.length; i++) {
     const rental = userRentItems[i];
-    console.log("r", rental.owner_id);
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       item.owner_id === rental.owner_id &&
         item.title === rental.title &&
-        userRent.push(item);
+        userRent.push({...item,rentalId : rental.id});
     }
   }
 
-  console.log("rent item", userRent);
+  console.log(" disp", userRent);
+  console.log("rent ", userRentItems);
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -72,6 +68,12 @@ const UserRentItem = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  
+
+   const cancel = (e) => {
+     console.log("run delete");
+     dispatch(deleteRental(e));
+   };
   
   return (
     <div className="main__box">
@@ -113,7 +115,7 @@ const UserRentItem = () => {
                     </button>
                     <button
                       className="hostitem__control__btn hostitem__control__btn--delete"
-                      onClick={() => cancel(item.id)}
+                      onClick={() => cancel(item.rentalId)}
                     >
                       Delete
                     </button>

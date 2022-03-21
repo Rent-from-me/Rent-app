@@ -67,8 +67,6 @@ const NewItem = (props) => {
     setNewItem(addNew);
   };
 
-  newItem.img_url = "https://bit.ly/3tp4NA4";
-
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewItem(newItem);
@@ -116,6 +114,16 @@ const NewItem = (props) => {
               />
             </div>
 
+            <div className="new__item__input">
+              <AttachMoneyIcon className="icon" />
+              <input
+                type="text"
+                name="img_url"
+                placeholder="Add image url"
+                value={newItem.img_url}
+                onChange={hadleChange}
+              />
+            </div>
             <div className="new__item__input">
               <AttachMoneyIcon className="icon" />
               <input

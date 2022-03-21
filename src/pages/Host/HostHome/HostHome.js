@@ -7,7 +7,7 @@ import HostHeader from "./HostHeader";
 import "./HostHome.css";
 
 const HostHome = (props) => {
-  console.log(props);
+    
   return (
     <div>
       {!props.isloginOwner ? (

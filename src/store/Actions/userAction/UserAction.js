@@ -39,7 +39,6 @@ export const Rentals = () => (dispatch) => {
       headers: { token: token.token },
     })
     .then((res) => {
-      console.log(res.data)
       dispatch({ type: USER_GETRENTAL_SUCCESS, payload: res.data });
     })
     .catch((error) =>

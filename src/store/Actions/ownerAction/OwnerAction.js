@@ -65,7 +65,7 @@ export const updateItem = (id,data) => (dispatch) => {
 export const deleteItem = (id) => (dispatch) => {
   const token = JSON.parse(localStorage.getItem("owner"));
   axiosAuth()
-    .delete(`${BaseUrl}/item/${id}`, {
+    .delete(`${BaseUrl}/items/${id}`, {
       headers: { token: token.token },
     })
     .then((res) => {

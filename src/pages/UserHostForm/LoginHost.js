@@ -9,7 +9,7 @@ import logo from "../../asset/logo.png";
 const Login = (props) => {
   const dispacth = useDispatch();
 
-  const login_User = (e) => {
+  const login_owner = (e) => {
     dispacth(ownerLogin(e));
   };
 
@@ -28,7 +28,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login_User(signIn);
+    login_owner(signIn);
   };
   
   

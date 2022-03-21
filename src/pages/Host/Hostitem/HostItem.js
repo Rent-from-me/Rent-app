@@ -23,6 +23,7 @@ const HostItem = ({ id, title, img_url, daily_cost, make, description }) => {
   const handleClose = () => {
     setOpen(false);
   };
+  
   return (
     <div className="hostitem__con">
       <div className="hostitem">

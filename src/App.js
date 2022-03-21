@@ -47,12 +47,12 @@ function App() {
 
   const isOwerTrue = () => {
     let store = JSON.parse(localStorage.getItem("owner"));
-    console.log(store);
     if (store && store.login) {
       setIsloginOwner(store.login);
       settTitleHostHeader("Switch to hosting")
     }
   };
+  
   console.log(isloginOwner);
   
   console.log(titleHostHeader);
@@ -62,6 +62,7 @@ function App() {
     localStorage.removeItem("login");
     setIslogin(false);
   };
+  
 
   
   return (

@@ -9,7 +9,7 @@ import HostHome from "../Host/HostHome/HostHome";
 
 const Auth = (props) => {
   const [title, setTitle] = useState("Welcome Back");
-  
+
   const handleTitle = () => {
     setTitle("Create account");
   };
@@ -17,6 +17,11 @@ const Auth = (props) => {
     setTitle("Welcome Back");
   };
 
+  const ownerLogin = useSelector(
+    (state) => state.OwnerLogRegReducer.ownerLogin
+  );
+
+  const [isloginOwner, setIsloginOwner] = useState(ownerLogin);
   return (
     <div className="author ">
       <div className="author__con">

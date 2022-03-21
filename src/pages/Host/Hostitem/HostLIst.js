@@ -19,7 +19,7 @@ const HostLIst = () => {
 
   useEffect(() => {
     dispatch(ownerItemFetch());
-  }, [checkFechItem]);
+  });
 
   const ownerItemsCreate = items.filter(
     (item) =>
