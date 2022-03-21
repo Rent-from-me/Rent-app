@@ -12,23 +12,28 @@ import "./UserRentItem.css";
 import { useDispatch } from "react-redux";
 import {
   deleteRental,
+  Rentals,
   updateRental,
 } from "../../../store/Actions/userAction/UserAction";
 
 //update
 const UserRentItem = () => {
   const dispatch = useDispatch();
+   const rentalItemchecker = useSelector(
+     (state) => state.UserReducer.userRentItem
+   );
 
+   useEffect(() => {
+     dispatch(Rentals());
+   }, [rentalItemchecker]);
   // const rentalDelchecker = useSelector(
   //   (state) => state.UserReducer.rentalDelete
   // );
 
-  
-    const cancel = (e) => {
-      console.log("run delete");
-      dispatch(deleteRental(e));
-    };
-
+  const cancel = (e) => {
+    console.log("run delete");
+    dispatch(deleteRental(e));
+  };
 
   const rentItems = useSelector((state) => state.UserReducer.userRental);
 
@@ -48,8 +53,6 @@ const UserRentItem = () => {
     setOpen(false);
   };
 
-
-  console.log(userRentItems);
 
   return (
     <div className="main__box">

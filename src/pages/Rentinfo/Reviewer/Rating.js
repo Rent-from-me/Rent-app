@@ -25,7 +25,6 @@ const Rating = (props) => {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0);
-  // console.log(props);
   const date = new Date();
   const year = date.getFullYear().toString();
   const d = date.getDate().toString();
@@ -42,14 +41,45 @@ const Rating = (props) => {
   rating.date = fullDate;
 
   const rentList = useSelector((state) => state.FetchRentListReducer.rentitem);
-  
-  const rateItem = rentList.filter((i) => i.owner_id === props.owner_id && i.title === props.title)
-  const token = JSON.parse(localStorage.getItem("login"));
-  const addRateItem = {...rateItem[0], review: rating.star, comments : [{comment : rating.comment}] }
 
+  const rateItem = rentList.filter((i) => i.id === props.tool_id);
+  const addRateItem = {...rateItem[0]}
+  console.log(rateItem);
+  
+  const store = JSON.parse(localStorage.getItem("login"));
+  const userName = store.msg.slice(store.msg.indexOf(" "), store.msg.length);
+  if (
+    addRateItem.hasOwnProperty("comments") &&
+    addRateItem.hasOwnProperty("reviewer")
+  ) {
+    addRateItem.comments.forEach((item) => {
+      if (+item.userId === +store.userId) {
+        item.comment = rating.comment;
+        item.date = rating.date;
+      }
+    });
+    addRateItem.reviewer.forEach((r) => {
+      if (+r.userId === +store.userId) {
+        r.reveiw = rating.star;
+      }
+    });
+    
+  } else {
+    console.log("run false");
+    addRateItem.comments = [
+      {
+        name: userName,
+        date: rating.date,
+        userId: store.userId,
+        comment: rating.comment,
+      },
+    ];
+    addRateItem.reviewer = [{ userId: store.userId, review: rating.star }];
+  }
+  console.log("RATE",addRateItem);
 
   const Rating = (e) => {
-    dispatch(addRating(props.id, e));
+    dispatch(addRating(addRateItem.id, e));
   };
 
   const handleClick = (value) => {
@@ -69,6 +99,8 @@ const Rating = (props) => {
     setRating(comment);
   };
 
+  console.log("item",addRateItem);
+  
   const submitHadle = (e) => {
     e.preventDefault();
     Rating(addRateItem);

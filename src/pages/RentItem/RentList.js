@@ -3,17 +3,25 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../../component/layout/Loading";
+import { FechRentList } from "../../store/Actions/rentListAction/RentListAction";
 import RentItem from "./RentItem";
-import "./RentList.css"
-
+import "./RentList.css";
 
 const RentList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(FechRentList());
+  }, [dispatch]);
   
-  const itemFechStart = useSelector((state) => state. FetchRentListReducer.isLoading);
-  const items = useSelector((state) => state. FetchRentListReducer.rentitem);
-  
-  const itemsError = useSelector((state) => state. FetchRentListReducer.error);
-   console.log(items);
+  const itemFechStart = useSelector(
+    (state) => state.FetchRentListReducer.isLoading
+  );
+  const items = useSelector((state) => state.FetchRentListReducer.rentitem);
+
+  const itemsError = useSelector((state) => state.FetchRentListReducer.error);
+
+  console.log(items);
   return (
     <>
       <div className="rent-list ps-4">

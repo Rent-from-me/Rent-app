@@ -6,10 +6,10 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-
 import "./ProfileEdit.css";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../../../store/Actions/userAction/userSettingAction";
+import { Box } from "@mui/material";
 
 
 const userinit = {
@@ -40,63 +40,73 @@ const ProfileEdit = (props) => {
   };
 
   return (
-    <div>
-      <Dialog
-        open={props.state}
-        onClose={props.close}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        className="fs-3"
-      >
-        <DialogTitle id="alert-dialog-title " className="fs-1 fw-bold">
-          Update your profile
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <div>
-              <form action="Put" className="upaderUser" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  className="upaderUser_input"
-                  placeholder="updat frist name"
-                  name="first_name"
-                  value={user.first_name}
-                  onChange={hadleChange}
-                />
-                <input
-                  type="text"
-                  className="upaderUser_input"
-                  placeholder="updat lastname name"
-                  name="last_name"
-                  value={user.last_name}
-                  onChange={hadleChange}
-                />
-                <input
-                  type="email"
-                  className="upaderUser_input"
-                  placeholder="updat email"
-                  name="email"
-                  value={user.email}
-                  onChange={hadleChange}
-                />
-                <input
-                  type="text"
-                  className="upaderUser_input"
-                  placeholder="password"
-                  name="password"
-                  value={user.password}
-                  onChange={hadleChange}
-                />
-                <DialogActions>
-                  <button onClick={props.close} className="fs-4 updateUser_btn">
-                    save
-                  </button>
-                </DialogActions>
-              </form>
-            </div>
-          </DialogContentText>
-        </DialogContent>
-      </Dialog>
+    <div className="edite-box ">
+      <Box sx={{ width: "100rem" }}>
+        <Dialog
+          open={props.state}
+          onClose={props.close}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          className="fs-3"
+          sx={{ width: "100%" }}
+        >
+          <DialogTitle id="alert-dialog-title " className="fs-1 fw-bold">
+            Update your profile
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              <div>
+                <form
+                  action="Put"
+                  className="upaderUser"
+                  onSubmit={handleSubmit}
+                >
+                  <input
+                    type="text"
+                    className="upaderUser_input"
+                    placeholder="updat frist name"
+                    name="first_name"
+                    value={user.first_name}
+                    onChange={hadleChange}
+                  />
+                  <input
+                    type="text"
+                    className="upaderUser_input"
+                    placeholder="updat lastname name"
+                    name="last_name"
+                    value={user.last_name}
+                    onChange={hadleChange}
+                  />
+                  <input
+                    type="email"
+                    className="upaderUser_input"
+                    placeholder="updat email"
+                    name="email"
+                    value={user.email}
+                    onChange={hadleChange}
+                  />
+                  <input
+                    type="text"
+                    className="upaderUser_input"
+                    placeholder="password"
+                    name="password"
+                    value={user.password}
+                    onChange={hadleChange}
+                  />
+                  <DialogActions>
+                    <button
+                      onClick={props.close}
+                      className="fs-4 updateUser_btn"
+                    >
+                      save
+                    </button>
+                  </DialogActions>
+                </form>
+              </div>
+            </DialogContentText>
+          </DialogContent>
+        </Dialog>
+      </Box>
     </div>
   );
 };

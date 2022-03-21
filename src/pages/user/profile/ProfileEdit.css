@@ -23,3 +23,9 @@
     background: orange;
     color: white;
 }
+
+@media only screen and (max-width: 900px) {
+  .edite-box {
+      width: 100vw !important;
+  }
+}

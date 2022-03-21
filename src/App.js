@@ -17,23 +17,8 @@ import AuthHost from "./pages/UserHostForm/AuthHost";
 import { FechRentList } from "./store/Actions/rentListAction/RentListAction";
 import { Rentals } from "./store/Actions/userAction/UserAction";
 
-
 function App() {
   const loginstate = useSelector((state) => state.UserLogRegReducer.login);
-  
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(FechRentList());
-  }, [dispatch]);
-  
-  const rentalItemchecker = useSelector(
-    (state) => state.UserReducer.userRentItem
-  );
-
-  useEffect(() => {
-    dispatch(Rentals());
-  }, [rentalItemchecker]);
 
   const [islogin, setIslogin] = useState(loginstate);
 
@@ -48,12 +33,12 @@ function App() {
       setIslogin(store.login);
     }
   };
-  
-   const Logout = () => {
-     localStorage.removeItem("login");
-      setIslogin(false);
-   };
-   
+
+  const Logout = () => {
+    localStorage.removeItem("login");
+    setIslogin(false);
+  };
+
   return (
     <div className="App">
       {!islogin ? (
