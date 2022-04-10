@@ -15,12 +15,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Be able to schedule a time and place for pick-up
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
-## The tool that Use
-| Column 1 Header | Column 2 Header | Column 3 Header |
+## The Tools that Use
+| Programming | Styling | In Future|
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+| ![Tux, the Linux mascot](https://bit.ly/35WIAAm)  | ![Tux, the Linux mascot](https://bit.ly/3Ktlwbz) | ![Tux, the Linux mascot](https://bit.ly/3KvOFCP) |
+|![Tux, the Linux mascot](https://bit.ly/3ur44Pb)  | ![Tux, the Linux mascot](https://bit.ly/37CEGxb)  | ![Tux, the Linux mascot](https://bit.ly/3JlEejW)  |
+| ![Tux, the Linux mascot](https://bit.ly/3O05Vm4)  | ![Tux, the Linux mascot](https://bit.ly/3KuaBhO)  | ![Tux, the Linux mascot](https://bit.ly/3urpyvy)  |
 
 
 Launches the test runner in the interactive watch mode.\
