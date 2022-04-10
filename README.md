@@ -60,4 +60,4 @@ and is continuous Deployment of our websit [here](https://renter-me.netlify.app/
 
 ## Summry
 
-this project is part of my frontend project at  [GabiSchool](https://gabischool.com/)  Bootcamp in 2022 thank you to give this **amazing skill**
+this project is part of my frontend project at  **[GabiSchool Bootcamp](https://gabischool.com/)**   in 2022 thank you to give this **amazing skill**
