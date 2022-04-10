@@ -1,11 +1,11 @@
 # RENT FORM ME
 Renter From Me: like AirBnB, but for high-end electronics. Are you tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person!
-## the mvp of this project is 
+## The MVP of this project is 
 
->Two user types: owners and renter
-user can login and create a profile
-user can then setup items they have for rent such as cameras, TV's, party equipment such as speakers/fog machines, etc.
-user will be able to create, read, update and delete rental data. A second user can login and see items that users have for rent and ask to rent an item
+> -Two user types: owners and renter
+-user can login and create a profile
+-user can then setup items they have for rent such as cameras, TV's, party equipment such as speakers/fog machines, etc.
+-user will be able to create, read, update and delete rental data. A second user can login and see items that users have for rent and ask to rent an item
 
 ### `npm start`
 
