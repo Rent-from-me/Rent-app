@@ -13,8 +13,9 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Be able to schedule a time and place for pick-up
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
-## How to project look like 
+## Can I see a final version of the course projects 
 ![Tux, the Linux mascot](src/asset//projectImage.png) 
+> Sure! Here you go:  [here](https://renter-me.netlify.app/).
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
