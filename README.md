@@ -16,15 +16,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
 ## The Tools that Use
+
 | Programming | Styling | In Future|
 | --------------- | --------------- | --------------- |
-| ![Tux, the Linux mascot](https://bit.ly/35WIAAm)  | ![Tux, the Linux mascot](https://bit.ly/3NYEkl8) | ![Tux, the Linux mascot](https://bit.ly/3KvOFCP) |
+| [![Tux, the Linux mascot](https://bit.ly/35WIAAm)](https://renter-me.netlify.app/)  | ![Tux, the Linux mascot](https://bit.ly/3NYEkl8) | ![Tux, the Linux mascot](https://bit.ly/3KvOFCP) |
 |![Tux, the Linux mascot](https://bit.ly/3ur44Pb)  | ![Tux, the Linux mascot](https://bit.ly/37CEGxb)  | ![Tux, the Linux mascot](https://bit.ly/3JlEejW)  |
 | ![Tux, the Linux mascot](https://bit.ly/3O05Vm4)  | ![Tux, the Linux mascot](https://bit.ly/3KuaBhO)  | ![Tux, the Linux mascot](https://bit.ly/3urpyvy)  |
-
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -79,4 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Can I see a final version of the course projects 
 
 ![Tux, the Linux mascot](src/asset//projectImage.png) 
+
 > **Sure! Here you go:  [here](https://renter-me.netlify.app/).**
