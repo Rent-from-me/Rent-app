@@ -19,9 +19,9 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 
 | Programming | Styling | In Future|
 | --------------- | --------------- | --------------- |
-| [![Tux, the Linux mascot](https://bit.ly/35WIAAm)](https://renter-me.netlify.app/)  | ![Tux, the Linux mascot](https://bit.ly/3NYEkl8) | ![Tux, the Linux mascot](https://bit.ly/3KvOFCP) |
-|![Tux, the Linux mascot](https://bit.ly/3ur44Pb)  | ![Tux, the Linux mascot](https://bit.ly/37CEGxb)  | ![Tux, the Linux mascot](https://bit.ly/3JlEejW)  |
-| ![Tux, the Linux mascot](https://bit.ly/3O05Vm4)  | ![Tux, the Linux mascot](https://bit.ly/3KuaBhO)  | ![Tux, the Linux mascot](https://bit.ly/3urpyvy)  |
+| [![Tux, the Linux mascot](https://reactjs.org/)](https://renter-me.netlify.app/)  | ![![Tux, the Linux mascot](https://www.w3schools.com/css/)](https://bit.ly/3NYEkl8) | ![![Tux, the Linux mascot](https://sass-lang.com/)](https://bit.ly/3KvOFCP) |
+|![![Tux, the Linux mascot](https://redux.js.org/)](https://bit.ly/37zccV5)  | ![![Tux, the Linux mascot](https://getbootstrap.com/)](https://bit.ly/37CEGxb)  | ![![Tux, the Linux mascot](https://www.remotion.dev/)](https://bit.ly/3JlEejW)  |
+| ![![Tux, the Linux mascot](https://developer.mozilla.org/en-US/docs/Web/JavaScript)](https://bit.ly/3O05Vm4)  | ![![Tux, the Linux mascot](https://mui.com/)](https://bit.ly/3KuaBhO)  | ![![Tux, the Linux mascot](https://icomoon.io/)](https://bit.ly/3urpyvy)  |
 
 ### `npm run build`
 
