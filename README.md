@@ -1,5 +1,4 @@
-?style=plastic&logo=appveyor
-  ![Tux, the Linux mascot](https://gabischool.com/wp-content/uploads/2020/12/logo12.png)
+>![Tux, the Linux mascot](https://gabischool.com/wp-content/uploads/2020/12/logo12.png)
 # RENT FORM ME
 Renter From Me: like AirBnB, but for high-end electronics. Are you tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person!
 ## The MVP of this project is 
