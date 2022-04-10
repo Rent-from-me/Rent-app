@@ -16,13 +16,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
 ## The Tools that Use
-<!--  -->
 
 | Programming | Styling | In Future|
 | --------------- | --------------- | --------------- |
-| [![Tux, the Linux mascot](https://bit.ly/3NZkupI)](https://reactjs.org/)  | ![![Tux, the Linux mascot](https://bit.ly/3NZkupI)](https://www.w3schools.com/css/) | ![![Tux, the Linux mascot](https://bit.ly/3KvOFCP)](https://sass-lang.com/) |
-|![![Tux, the Linux mascot](https://bit.ly/37zccV5)](https://redux.js.org/)  | ![![Tux, the Linux mascot](https://bit.ly/37CEGxb)](https://getbootstrap.com/)  | ![![Tux, the Linux mascot](https://bit.ly/3JlEejW)](https://www.remotion.dev/)  |
-| ![![Tux, the Linux mascot](https://bit.ly/3O05Vm4)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  | ![![Tux, the Linux mascot](https://bit.ly/3KuaBhO)](https://mui.com/)  | ![![Tux, the Linux mascot](https://bit.ly/3urpyvy)](https://icomoon.io/)  |
+| [![Tux, the Linux mascot](https://bit.ly/35WIAAm)](https://renter-me.netlify.app/)  | ![Tux, the Linux mascot](https://bit.ly/3NYEkl8) | ![Tux, the Linux mascot](https://bit.ly/3KvOFCP) |
+|![Tux, the Linux mascot](https://bit.ly/3ur44Pb)  | ![Tux, the Linux mascot](https://bit.ly/37CEGxb)  | ![Tux, the Linux mascot](https://bit.ly/3JlEejW)  |
+| ![Tux, the Linux mascot](https://bit.ly/3O05Vm4)  | ![Tux, the Linux mascot](https://bit.ly/3KuaBhO)  | ![Tux, the Linux mascot](https://bit.ly/3urpyvy)  |
 
 ### `npm run build`
 
