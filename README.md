@@ -1,7 +1,9 @@
 
 # RENT FORM ME
+
 Renter From Me: like AirBnB, but for high-end electronics. Are you tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person!
 ## The MVP of this project is 
+
 >1. Two user types: owners and renter
 >2. user can login and create a profile
 >3. user can then setup items they have for rent such as cameras, TV's, party equipment such as speakers/fog machines, etc.
@@ -13,10 +15,13 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Be able to schedule a time and place for pick-up
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
-## Can I see a final version of the course projects 
-![Tux, the Linux mascot](src/asset//projectImage.png) 
-> Sure! Here you go:  [here](https://renter-me.netlify.app/).
-### `npm test`
+## The tool that Use
+| Column 1 Header | Column 2 Header | Column 3 Header |
+| --------------- | --------------- | --------------- |
+| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
+| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -70,3 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Can I see a final version of the course projects 
+
+![Tux, the Linux mascot](src/asset//projectImage.png) 
+> **Sure! Here you go:  [here](https://renter-me.netlify.app/).**
