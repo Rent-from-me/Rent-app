@@ -34,12 +34,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 > - how to setup redux with middleware
 > - how to connect the frontend to api
 > - how to make authentication
-## Can I see a final version of the course projects 
+## Can I see a final version of the  projects 
 
 
 ![Tux, the Linux mascot](src/asset//projectImage.png) 
 
-**Sure!**
+**A** Sure!
 
 > **Here you go:  [here](https://renter-me.netlify.app/).**
 
@@ -56,3 +56,8 @@ and is continuous Deployment of our websit [here](https://renter-me.netlify.app/
 >- styling : component isn't good styling and Responsive of the page as not good need a little work on
 >- no animation yet 
 >- l will want to add a stretching problem 
+
+
+## Summry
+
+this project is part of my frontend project at  [GabiSchool](https://gabischool.com/)  Bootcamp in 2022 thank you to give this **amazing skill**
