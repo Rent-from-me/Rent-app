@@ -1,4 +1,4 @@
-
+https://img.shields.io/badge/dynamic/json?url=<URL>&label=<LABEL>&query=<$.DATA.SUBDATA>&color=<COLOR>&prefix=<PREFIX>&suffix=<SUFFIX>
 # RENT FORM ME
 
 Renter From Me: like AirBnB, but for high-end electronics. Are you tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person!
@@ -40,3 +40,5 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 ![Tux, the Linux mascot](src/asset//projectImage.png) 
 
 > **Sure! Here you go:  [here](https://renter-me.netlify.app/).**
+
+## Deployment 
