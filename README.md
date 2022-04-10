@@ -15,7 +15,9 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 >- Be able to schedule a time and place for pick-up
 >- Add a review system into the app so that the social aspect is there to ensure that users are legitimate.
 
-## The Tools that Use
+
+## The Tools that I Use
+
 
 | Programming | Styling | In Future|
 | --------------- | --------------- | --------------- |
@@ -23,15 +25,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 |[![Tux, the Linux mascot](https://bit.ly/37zccV5)](https://redux.js.org/)  | [![Tux, the Linux mascot](https://bit.ly/37CEGxb)](https://getbootstrap.com/)  | [![Tux, the Linux mascot](https://bit.ly/3JlEejW)](https://www.remotion.dev/)  |
 | [![Tux, the Linux mascot](https://bit.ly/3O05Vm4)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  | [![Tux, the Linux mascot](https://bit.ly/3KuaBhO)](https://mui.com/)  | [![Tux, the Linux mascot](https://bit.ly/3urpyvy)](https://icomoon.io/)  |
 
-### `npm run build`
+## `What did you learn?`
+##### learned in projectigan 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> - 1. how to setup redux with middleware
+> - how to connect the frontend to api
+> - how to make authentication
 
 ### `npm run eject`
 
@@ -74,6 +73,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Can I see a final version of the course projects 
+
 
 ![Tux, the Linux mascot](src/asset//projectImage.png) 
 
