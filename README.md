@@ -26,7 +26,7 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 | [![Tux, the Linux mascot](https://bit.ly/3O05Vm4)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  | [![Tux, the Linux mascot](https://bit.ly/3KuaBhO)](https://mui.com/)  | [![Tux, the Linux mascot](https://bit.ly/3urpyvy)](https://icomoon.io/)  |
 
 ## `What did you learn?`
-##### learned in projectigan 
+#### learned in this project
 
 > - 1. how to setup redux with middleware
 > - how to connect the frontend to api
