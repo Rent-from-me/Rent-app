@@ -1,4 +1,4 @@
-https://img.shields.io/badge/dynamic/json?url=<URL>&label=<LABEL>&query=<$.DATA.SUBDATA>&color=<COLOR>&prefix=<PREFIX>&suffix=<SUFFIX>
+[![Tux, the Linux mascot](?style=plastic&logo=appveyor)](https://github.com/Rent-from-me/Rent-app) 
 # RENT FORM ME
 
 Renter From Me: like AirBnB, but for high-end electronics. Are you tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person!
