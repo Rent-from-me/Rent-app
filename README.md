@@ -37,6 +37,6 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 ## Can I see a final version of the course projects 
 
 
-![Tux, the Linux mascot](src/asset//projectImage.png) 
+![Tux, the Linux mascot](src/asset//projectImage.png) | ![Tux, the Linux mascot](src/asset//projectImage.png) | ![Tux, the Linux mascot](src/asset//projectImage.png)
 
 > **Sure! Here you go:  [here](https://renter-me.netlify.app/).**
