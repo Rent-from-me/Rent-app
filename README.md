@@ -45,3 +45,12 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 
 Netlify unites an entire ecosystem of modern tools and services into a single, simple workflow for building high performance sites and apps.
 and is continuous Deployment of our websit [here](https://renter-me.netlify.app/).**
+
+## Problems 
+
+>- fetch api : fetch a api's and loading are some times does not work good 
+>- dispatch : in redux's their is some problem a useEffect to dispatch a actions 
+>- login and registartion : when you login is not open the home  page and register is same error
+>- styling : component isn't good styling and Responsive of the page as not good need a little work on
+>- no animation yet 
+>- l will want to add a stretching problem 
