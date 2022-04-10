@@ -28,7 +28,7 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 ## `What did you learn?`
 #### learned in this project
 
-> - 1. how to setup redux with middleware
+> - how to setup redux with middleware
 > - how to connect the frontend to api
 > - how to make authentication
 
