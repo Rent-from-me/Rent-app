@@ -25,7 +25,7 @@ Renter From Me: like AirBnB, but for high-end electronics. Are you tired of payi
 | --------------- | --------------- | --------------- |
 | [![Tux, the Linux mascot](https://bit.ly/35WIAAm)](https://reactjs.org/)  | [![Tux, the Linux mascot](https://bit.ly/3NYEkl8)](https://www.w3schools.com/css/) | [![Tux, the Linux mascot](https://bit.ly/3KvOFCP)](https://sass-lang.com/) |
 |[![Tux, the Linux mascot](https://bit.ly/37zccV5)](https://redux.js.org/)  | [![Tux, the Linux mascot](https://bit.ly/37CEGxb)](https://getbootstrap.com/)  | [![Tux, the Linux mascot](https://bit.ly/3JlEejW)](https://www.remotion.dev/)  |
-| [![Tux, the Linux mascot](https://bit.ly/3O05Vm4)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  | [![Tux, the Linux mascot](https://bit.ly/3KuaBhO)](https://mui.com/)  | [![Tux, the Linux mascot](https://bit.ly/3urpyvy)](https://icomoon.io/)  |
+| [![Tux, the Linux mascot](https://bit.ly/3O05Vm4)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  | [![Tux, the Linux mascot](https://bit.ly/3KuaBhO)](https://mui.com/)  | [![Tux, the Linux mascot](https://bit.ly/3urpyvy)](https://icomoon.io/)  
 
 ## `What did I learn?`
 
@@ -49,7 +49,7 @@ Netlify unites an entire ecosystem of modern tools and services into a single, s
 and is continuous Deployment of our websit [here](https://renter-me.netlify.app/).**
 
 ## Problems 
-
+>- try to be wrong
 >- fetch api : fetch a api's and loading are some times does not work good 
 >- dispatch : in redux's their is some problem a useEffect to dispatch a actions 
 >- login and registartion : when you login is not open the home  page and register is same error
